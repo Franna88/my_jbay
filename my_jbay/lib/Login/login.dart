@@ -1,0 +1,81 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_jbay/constants/myColors.dart';
+import 'package:my_jbay/constants/myutility.dart';
+
+class Login extends StatefulWidget {
+  const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Mycolors().blue,
+      body: SizedBox(
+        height: MyUtility(context).height,
+        width: MyUtility(context).width,
+        child: Stack(
+          children: [
+            Container(
+              height: MyUtility(context).height * 0.40,
+              width: MyUtility(context).width * 0.40,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('images/myJbayLogoTwo.png'),
+                    fit: BoxFit.fill),
+              ),
+            ),
+            Container(
+              height: MyUtility(context).height * 0.80,
+              width: MyUtility(context).width,
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(245, 245, 245, 0.85),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "WELCOME!",
+                    style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
+                        color: Mycolors().orange,
+                        fontFamily: 'BmHanna',
+                        letterSpacing: 1),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    "We can’t wait to show\nyou around our town",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.nunito(
+                        fontSize: 17,
+                        color: Color.fromRGBO(3, 3, 45, 0.70),
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    "Login",
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Mycolors().extremeBlue,
+                        fontFamily: 'BmHanna',
+                        letterSpacing: 1),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
