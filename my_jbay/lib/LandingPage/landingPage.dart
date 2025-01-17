@@ -70,24 +70,32 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   const SizedBox(height: 50),
                   LargeButton(
-                      buttonColor: Mycolors().blue,
-                      buttonText: 'Tourist',
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => OnboardingPages()));
-                      }),
+                    buttonColor: Mycolors().blue,
+                    buttonText: 'Tourist',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              OnboardingPages(userType: 'Tourist'),
+                        ),
+                      );
+                    },
+                  ),
                   const SizedBox(height: 25),
                   LargeButton(
-                      buttonColor: Mycolors().yellow,
-                      buttonText: 'Business',
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => OnboardingPages()));
-                      }),
+                    buttonColor: Mycolors().yellow,
+                    buttonText: 'Business',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              OnboardingPages(userType: 'Business'),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

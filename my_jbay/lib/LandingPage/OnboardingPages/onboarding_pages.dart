@@ -8,7 +8,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingPages extends StatefulWidget {
-  const OnboardingPages({super.key});
+  final String userType; // Add this line
+
+  const OnboardingPages(
+      {super.key, required this.userType}); // Update constructor
 
   @override
   State<OnboardingPages> createState() => _OnboardingPagesState();
@@ -22,6 +25,16 @@ class _OnboardingPagesState extends State<OnboardingPages> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
+    // Determine the title and description based on userType
+    final title = widget.userType == 'Tourist'
+        ? 'Find Family'
+        : "Show them what\nyou’ve got!";
+    final description = widget.userType == 'Tourist'
+        ? 'We have collected all the activities from around for you to easily find the perfect family fun!'
+        : 'Take your business to the next level by connecting with local opportunities!';
+    final title2 =
+        widget.userType == 'Tourist' ? 'Look for Local' : 'Local is Lekker';
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -38,10 +51,15 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                   _currentPage = index;
                 });
               },
-              children: const [
-                OnboardingPageOne(),
-                OnboardingPageTwo(),
-                OnboardingPageThree(),
+              children: [
+                OnboardingPageOne(
+                  title: title,
+                  description: description,
+                ),
+                OnboardingPageTwo(
+                  title: title2,
+                ),
+                const OnboardingPageThree(),
               ],
             ),
           ),

@@ -4,7 +4,8 @@ import 'package:my_jbay/commanUi/largeButton.dart';
 import 'package:my_jbay/constants/myColors.dart';
 
 class OnboardingPageTwo extends StatelessWidget {
-  const OnboardingPageTwo({super.key});
+  final String title;
+  const OnboardingPageTwo({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class OnboardingPageTwo extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Look for Local",
+                  title,
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.normal,
@@ -31,7 +32,7 @@ class OnboardingPageTwo extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  "Our town is exploding with local cuisine and craft, from clothes, to jams and bags. Support our local talent!",
+                  'Our town is exploding with local cuisine and craft, from clothes, to jams and bags. Support our local talent!',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                       fontSize: 17,

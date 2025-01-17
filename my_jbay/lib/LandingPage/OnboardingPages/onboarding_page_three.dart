@@ -21,7 +21,7 @@ class OnboardingPageThree extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Find Your Match!",
+                  'Find Your Match!',
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.normal,
@@ -31,7 +31,7 @@ class OnboardingPageThree extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  "Find the perfect holiday itinerary right here at your fingertips.",
+                  'Find the perfect holiday itinerary right here at your fingertips.',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                       fontSize: 17,

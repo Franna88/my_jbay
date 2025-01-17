@@ -4,7 +4,10 @@ import 'package:my_jbay/commanUi/largeButton.dart';
 import 'package:my_jbay/constants/myColors.dart';
 
 class OnboardingPageOne extends StatelessWidget {
-  const OnboardingPageOne({super.key});
+  final String title;
+  final String description;
+  const OnboardingPageOne(
+      {super.key, required this.title, required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +36,19 @@ class OnboardingPageOne extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Find Family Fun!",
+                  title,
                   style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.normal,
-                      color: Mycolors().blue,
-                      fontFamily: 'BmHanna',
-                      letterSpacing: 1),
+                    fontSize: 30,
+                    fontWeight: FontWeight.normal,
+                    color: Mycolors().blue,
+                    fontFamily: 'BmHanna',
+                    letterSpacing: 1,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 30),
                 Text(
-                  "We have collected all the activities from around for you to easily find the perfect family fun!",
+                  description,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                       fontSize: 17,
