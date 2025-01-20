@@ -15,7 +15,7 @@ class LargeButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: 250,
+        width: MediaQuery.of(context).size.width * 0.7,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: buttonColor,
