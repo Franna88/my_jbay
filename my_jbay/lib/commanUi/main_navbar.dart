@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/constants/myColors.dart';
 
 class MainNavbar extends StatefulWidget {
   final int initialIndex;
@@ -35,7 +36,7 @@ class _MainNavbarState extends State<MainNavbar> {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
       onTap: _onItemTapped,
-      selectedItemColor: Colors.blue,
+      selectedItemColor: Mycolors().blue,
       unselectedItemColor: Colors.grey,
       backgroundColor: Colors.white,
       type: BottomNavigationBarType.fixed,
