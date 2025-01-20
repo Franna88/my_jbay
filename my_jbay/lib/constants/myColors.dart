@@ -6,5 +6,5 @@ class Mycolors {
   final yellow = const Color.fromRGBO(244, 173, 0, 1);
   final orange = const Color.fromRGBO(244, 98, 0, 1);
   final extremeBlue = const Color.fromRGBO(3, 3, 45, 1);
-  final lightGrey = Colors.grey.shade400;
+  final lightGrey = Colors.grey.shade200;
 }

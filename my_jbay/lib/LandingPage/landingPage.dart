@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_pages.dart';
+import 'package:my_jbay/Tourist/MainPages/tourist_landing_page.dart';
 import 'package:my_jbay/commanUi/largeButton.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -73,11 +74,17 @@ class _LandingPageState extends State<LandingPage> {
                     buttonColor: Mycolors().blue,
                     buttonText: 'Tourist',
                     onTap: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) =>
+                      //         OnboardingPages(userType: 'Tourist'),
+                      //   ),
+                      // );
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              OnboardingPages(userType: 'Tourist'),
+                          builder: (context) => TouristLandingPage(),
                         ),
                       );
                     },

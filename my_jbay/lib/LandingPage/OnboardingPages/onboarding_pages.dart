@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_one.dart';
 import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_three.dart';
 import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_two.dart';
+import 'package:my_jbay/Tourist/MainPages/tourist_landing_page.dart';
 import 'package:my_jbay/commanUi/reusable_button.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -115,7 +116,12 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                   onTap: () {
                     if (_currentPage == 2) {
                       // Navigate to the homepage when Finish is tapped
-                      Navigator.pushReplacementNamed(context, '/homepage');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TouristLandingPage(),
+                        ),
+                      );
                     } else {
                       // Navigate to the next page
                       _onboardingPageController.nextPage(
