@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:my_jbay/commanUi/largeButton.dart';
+import 'package:my_jbay/commanUi/reusable_category_container.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
@@ -11,6 +10,91 @@ class TouristExplore extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
+    // List of categories with imagePath, title, and unique onTap functionality
+    final List<Map<String, dynamic>> categories = [
+      {
+        'imagePath': 'images/specials.png',
+        'title': 'Specials',
+        'onTap': () {
+          // Action for Specials category
+          print('Specials tapped');
+        }
+      },
+      {
+        'imagePath': 'images/activities.png',
+        'title': 'Activities',
+        'onTap': () {
+          // Action for Activities category
+          print('Activities tapped');
+        }
+      },
+      {
+        'imagePath': 'images/where_to_stay.png',
+        'title': 'Where to Stay',
+        'onTap': () {
+          // Action for Where to Stay category
+          print('Where to Stay tapped');
+        }
+      },
+      {
+        'imagePath': 'images/food.png',
+        'title': 'Food',
+        'onTap': () {
+          // Action for Food category
+          print('Food tapped');
+        }
+      },
+      {
+        'imagePath': 'images/news.png',
+        'title': 'News',
+        'onTap': () {
+          // Action for News category
+          print('News tapped');
+        }
+      },
+      {
+        'imagePath': 'images/services.png',
+        'title': 'Services',
+        'onTap': () {
+          // Action for Services category
+          print('Services tapped');
+        }
+      },
+      {
+        'imagePath': 'images/lost.png',
+        'title': 'Lost',
+        'onTap': () {
+          // Action for Lost category
+          print('Lost tapped');
+        }
+      },
+      {
+        'imagePath': 'images/jobs.png',
+        'title': 'Jobs',
+        'onTap': () {
+          // Action for Jobs category
+          print('Jobs tapped');
+        }
+      },
+      {
+        'imagePath': 'images/911.png',
+        'title': '911',
+        'onTap': () {
+          // Action for 911 category
+          print('911 tapped');
+        }
+      },
+      {
+        'imagePath': 'images/local.png',
+        'title': 'Local',
+        'onTap': () {
+          // Action for Local category
+          print('Local tapped');
+        }
+      },
+      // Add more categories as needed
+    ];
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -80,11 +164,22 @@ class TouristExplore extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 30),
+                      // Generate ReusableCategoryContainer widgets dynamically
+                      Wrap(
+                        runSpacing: 20.0,
+                        spacing: 20.0,
+                        children: categories.map((category) {
+                          return ReusableCategoryContainer(
+                            imagePath: category['imagePath']!,
+                            title: category['title']!,
+                            onTap: category['onTap'] as VoidCallback,
+                          );
+                        }).toList(),
+                      ),
                     ],
                   ),
                 ),
               )
-              // MyJbay logo
             ],
           ),
         ),
