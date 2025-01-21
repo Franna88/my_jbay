@@ -11,18 +11,88 @@ class TouristExplore extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    // List of categories with imagePath and title
-    final categories = [
-      {'imagePath': 'images/specials.png', 'title': 'specials'},
-      {'imagePath': 'images/activities.png', 'title': 'activities'},
-      {'imagePath': 'images/where_to_stay.png', 'title': 'where to Stay'},
-      {'imagePath': 'images/food.png', 'title': 'food'},
-      {'imagePath': 'images/news.png', 'title': 'news'},
-      {'imagePath': 'images/services.png', 'title': 'services'},
-      {'imagePath': 'images/lost.png', 'title': 'lost'},
-      {'imagePath': 'images/jobs.png', 'title': 'jobs'},
-      {'imagePath': 'images/911.png', 'title': '911'},
-      {'imagePath': 'images/local.png', 'title': 'local'},
+    // List of categories with imagePath, title, and unique onTap functionality
+    final List<Map<String, dynamic>> categories = [
+      {
+        'imagePath': 'images/specials.png',
+        'title': 'Specials',
+        'onTap': () {
+          // Action for Specials category
+          print('Specials tapped');
+        }
+      },
+      {
+        'imagePath': 'images/activities.png',
+        'title': 'Activities',
+        'onTap': () {
+          // Action for Activities category
+          print('Activities tapped');
+        }
+      },
+      {
+        'imagePath': 'images/where_to_stay.png',
+        'title': 'Where to Stay',
+        'onTap': () {
+          // Action for Where to Stay category
+          print('Where to Stay tapped');
+        }
+      },
+      {
+        'imagePath': 'images/food.png',
+        'title': 'Food',
+        'onTap': () {
+          // Action for Food category
+          print('Food tapped');
+        }
+      },
+      {
+        'imagePath': 'images/news.png',
+        'title': 'News',
+        'onTap': () {
+          // Action for News category
+          print('News tapped');
+        }
+      },
+      {
+        'imagePath': 'images/services.png',
+        'title': 'Services',
+        'onTap': () {
+          // Action for Services category
+          print('Services tapped');
+        }
+      },
+      {
+        'imagePath': 'images/lost.png',
+        'title': 'Lost',
+        'onTap': () {
+          // Action for Lost category
+          print('Lost tapped');
+        }
+      },
+      {
+        'imagePath': 'images/jobs.png',
+        'title': 'Jobs',
+        'onTap': () {
+          // Action for Jobs category
+          print('Jobs tapped');
+        }
+      },
+      {
+        'imagePath': 'images/911.png',
+        'title': '911',
+        'onTap': () {
+          // Action for 911 category
+          print('911 tapped');
+        }
+      },
+      {
+        'imagePath': 'images/local.png',
+        'title': 'Local',
+        'onTap': () {
+          // Action for Local category
+          print('Local tapped');
+        }
+      },
       // Add more categories as needed
     ];
 
@@ -102,6 +172,7 @@ class TouristExplore extends StatelessWidget {
                           return ReusableCategoryContainer(
                             imagePath: category['imagePath']!,
                             title: category['title']!,
+                            onTap: category['onTap'] as VoidCallback,
                           );
                         }).toList(),
                       ),
