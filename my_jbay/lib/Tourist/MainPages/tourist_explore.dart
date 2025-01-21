@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:my_jbay/commanUi/largeButton.dart';
+import 'package:my_jbay/commanUi/reusable_category_container.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
@@ -11,6 +10,21 @@ class TouristExplore extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
+    // List of categories with imagePath and title
+    final categories = [
+      {'imagePath': 'images/specials.png', 'title': 'specials'},
+      {'imagePath': 'images/activities.png', 'title': 'activities'},
+      {'imagePath': 'images/where_to_stay.png', 'title': 'where to Stay'},
+      {'imagePath': 'images/food.png', 'title': 'food'},
+      {'imagePath': 'images/news.png', 'title': 'news'},
+      {'imagePath': 'images/services.png', 'title': 'services'},
+      {'imagePath': 'images/lost.png', 'title': 'lost'},
+      {'imagePath': 'images/jobs.png', 'title': 'jobs'},
+      {'imagePath': 'images/911.png', 'title': '911'},
+      {'imagePath': 'images/local.png', 'title': 'local'},
+      // Add more categories as needed
+    ];
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -80,11 +94,21 @@ class TouristExplore extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 30),
+                      // Generate ReusableCategoryContainer widgets dynamically
+                      Wrap(
+                        runSpacing: 20.0,
+                        spacing: 20.0,
+                        children: categories.map((category) {
+                          return ReusableCategoryContainer(
+                            imagePath: category['imagePath']!,
+                            title: category['title']!,
+                          );
+                        }).toList(),
+                      ),
                     ],
                   ),
                 ),
               )
-              // MyJbay logo
             ],
           ),
         ),
