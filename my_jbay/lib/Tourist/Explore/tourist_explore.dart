@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/Tourist/Explore/ExplorePageCategories/ActivityPages/activities_categories.dart';
 import 'package:my_jbay/commanUi/reusable_category_container.dart';
+import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
+import 'package:my_jbay/constants/my_jbay_textstyle.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
 class TouristExplore extends StatelessWidget {
@@ -11,89 +14,58 @@ class TouristExplore extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
-    // List of categories with imagePath, title, and unique onTap functionality
+    // List of categories with imagePath, title, and page for navigation
     final List<Map<String, dynamic>> categories = [
       {
         'imagePath': 'images/specials.png',
         'title': 'Specials',
-        'onTap': () {
-          // Action for Specials category
-          print('Specials tapped');
-        }
+        'page': const Center(child: Text('Specials Page')),
       },
       {
         'imagePath': 'images/activities.png',
         'title': 'Activities',
-        'onTap': () {
-          // Action for Activities category
-          print('Activities tapped');
-        }
+        'page': const ActivitiesCategories(),
       },
       {
         'imagePath': 'images/where_to_stay.png',
         'title': 'Where to Stay',
-        'onTap': () {
-          // Action for Where to Stay category
-          print('Where to Stay tapped');
-        }
+        'page': const Center(child: Text('Where to Stay Page')),
       },
       {
         'imagePath': 'images/food.png',
         'title': 'Food',
-        'onTap': () {
-          // Action for Food category
-          print('Food tapped');
-        }
+        'page': const Center(child: Text('Food Page')),
       },
       {
         'imagePath': 'images/news.png',
         'title': 'News',
-        'onTap': () {
-          // Action for News category
-          print('News tapped');
-        }
+        'page': const Center(child: Text('News Page')),
       },
       {
         'imagePath': 'images/services.png',
         'title': 'Services',
-        'onTap': () {
-          // Action for Services category
-          print('Services tapped');
-        }
+        'page': const Center(child: Text('Services Page')),
       },
       {
         'imagePath': 'images/lost.png',
         'title': 'Lost',
-        'onTap': () {
-          // Action for Lost category
-          print('Lost tapped');
-        }
+        'page': const Center(child: Text('Lost Page')),
       },
       {
         'imagePath': 'images/jobs.png',
         'title': 'Jobs',
-        'onTap': () {
-          // Action for Jobs category
-          print('Jobs tapped');
-        }
+        'page': const Center(child: Text('Jobs Page')),
       },
       {
         'imagePath': 'images/911.png',
         'title': '911',
-        'onTap': () {
-          // Action for 911 category
-          print('911 tapped');
-        }
+        'page': const Center(child: Text('911 Page')),
       },
       {
         'imagePath': 'images/local.png',
         'title': 'Local',
-        'onTap': () {
-          // Action for Local category
-          print('Local tapped');
-        }
+        'page': const Center(child: Text('Local Page')),
       },
-      // Add more categories as needed
     ];
 
     return Scaffold(
@@ -141,28 +113,9 @@ class TouristExplore extends StatelessWidget {
                         ),
                       ),
                       // Everything Local container
-                      Container(
-                        width: screenWidth * 0.7,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: Mycolors().blue,
-                        ),
-                        child: const Center(
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 15),
-                            child: Text(
-                              'Everything Local',
-                              style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontFamily: 'BmHanna',
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
+                      ReusablePageTitle(
+                          title: 'Everything Local',
+                          backgroundColor: Mycolors().blue),
                       const SizedBox(height: 30),
                       // Generate ReusableCategoryContainer widgets dynamically
                       Wrap(
@@ -172,7 +125,14 @@ class TouristExplore extends StatelessWidget {
                           return ReusableCategoryContainer(
                             imagePath: category['imagePath']!,
                             title: category['title']!,
-                            onTap: category['onTap'] as VoidCallback,
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => category['page'] as Widget,
+                                ),
+                              );
+                            },
                           );
                         }).toList(),
                       ),
