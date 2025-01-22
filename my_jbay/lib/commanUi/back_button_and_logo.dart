@@ -23,7 +23,7 @@ class BackButtonAndLogo extends StatelessWidget {
         ),
         // Icon on the left
         Positioned(
-          left: 0,
+          left: 10,
           top: 20,
           child: IconButton(
             icon: Icon(
