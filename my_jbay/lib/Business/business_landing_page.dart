@@ -3,14 +3,14 @@ import 'package:my_jbay/Tourist/Explore/tourist_explore.dart';
 import 'package:my_jbay/Tourist/MyJbay/tourist_my_jbay.dart';
 import 'package:my_jbay/commanUi/main_navbar.dart';
 
-class TouristLandingPage extends StatefulWidget {
-  const TouristLandingPage({super.key});
+class BusinessLandingPage extends StatefulWidget {
+  const BusinessLandingPage({super.key});
 
   @override
-  _TouristLandingPageState createState() => _TouristLandingPageState();
+  _BusinessLandingPageState createState() => _BusinessLandingPageState();
 }
 
-class _TouristLandingPageState extends State<TouristLandingPage> {
+class _BusinessLandingPageState extends State<BusinessLandingPage> {
   int _selectedIndex = 0;
 
   // Create a separate navigator for each tab
@@ -24,7 +24,7 @@ class _TouristLandingPageState extends State<TouristLandingPage> {
   final List<Widget> _pages = [
     const TouristExplore(), // Explore page
     const TouristMyJbay(), // My JBay page
-    const Center(child: Text('Tourist Settings Page')), // Settings page
+    const Center(child: Text('Settings business')), // Settings page
   ];
 
   // Function to handle tab selection
@@ -62,7 +62,7 @@ class _TouristLandingPageState extends State<TouristLandingPage> {
             onGenerateRoute: (routeSettings) {
               return MaterialPageRoute(
                   builder: (_) =>
-                      const Center(child: Text('Tourist Settings')));
+                      const Center(child: Text('Settings business')));
             },
           ),
         ],

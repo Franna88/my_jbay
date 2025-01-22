@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_jbay/Business/business_landing_page.dart';
 import 'package:my_jbay/Login/ui/loginTextfields.dart';
+import 'package:my_jbay/Tourist/tourist_landing_page.dart';
 import 'package:my_jbay/commanUi/reusable_button.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  final String userType; // Receive userType from the previous screen
+  const Login({super.key, required this.userType});
 
   @override
   State<Login> createState() => _LoginState();
@@ -20,6 +23,7 @@ class _LoginState extends State<Login> {
 
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Mycolors().blue,
       body: SizedBox(
@@ -87,9 +91,29 @@ class _LoginState extends State<Login> {
                       ),
                       const SizedBox(height: 15),
                       ReusableButton(
-                          buttonColor: Mycolors().yellow,
-                          buttonText: 'Login',
-                          onTap: (){})
+                        buttonColor: Mycolors().yellow,
+                        buttonText: 'Login',
+                        onTap: () {
+                          // You can replace this with actual validation logic
+
+                          // Use the passed userType to navigate to the appropriate page
+                          if (widget.userType == 'Tourist') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => TouristLandingPage(),
+                              ),
+                            );
+                          } else if (widget.userType == 'Business') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BusinessLandingPage(),
+                              ),
+                            );
+                          }
+                        },
+                      ),
                     ],
                   ),
                 ),
@@ -111,7 +135,7 @@ class _LoginState extends State<Login> {
                   width: MyUtility(context).width * 0.75,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('images/myJbayLogoTwo.png'),
+                        image: AssetImage('images/myJbayLogo.png'),
                         fit: BoxFit.fill),
                   ),
                 ),
