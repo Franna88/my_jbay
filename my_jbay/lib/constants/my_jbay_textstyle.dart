@@ -8,9 +8,10 @@ class MyJbayTextstyle {
   // Header Styles
   TextStyle get header1 => TextStyle(
         fontFamily: 'BmHanna',
-        fontSize: width / 6.5,
-        fontWeight: FontWeight.bold,
+        fontSize: width / 14,
+        fontWeight: FontWeight.w600,
         color: Colors.white,
+        letterSpacing: 1,
       );
 
   // Body Text Styles
