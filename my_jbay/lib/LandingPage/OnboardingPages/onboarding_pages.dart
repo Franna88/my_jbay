@@ -3,6 +3,7 @@ import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_one.dart';
 import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_three.dart';
 import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_two.dart';
 import 'package:my_jbay/Tourist/tourist_landing_page.dart';
+import 'package:my_jbay/Business/business_landing_page.dart'; // Import the BusinessLandingPage
 import 'package:my_jbay/commanUi/reusable_button.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -82,8 +83,22 @@ class _OnboardingPagesState extends State<OnboardingPages> {
               children: [
                 InkWell(
                   onTap: () {
-                    // Navigate to the homepage when Skip is tapped
-                    Navigator.pushReplacementNamed(context, '/homepage');
+                    // Navigate based on userType when Skip is tapped
+                    if (widget.userType == 'Tourist') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TouristLandingPage(),
+                        ),
+                      );
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BusinessLandingPage(),
+                        ),
+                      );
+                    }
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.22,
@@ -115,13 +130,22 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                   customWidth: screenWidth * 0.32,
                   onTap: () {
                     if (_currentPage == 2) {
-                      // Navigate to the homepage when Finish is tapped
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TouristLandingPage(),
-                        ),
-                      );
+                      // Navigate based on userType when Finish is tapped
+                      if (widget.userType == 'Tourist') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TouristLandingPage(),
+                          ),
+                        );
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BusinessLandingPage(),
+                          ),
+                        );
+                      }
                     } else {
                       // Navigate to the next page
                       _onboardingPageController.nextPage(

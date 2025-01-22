@@ -22,9 +22,9 @@ class _BusinessLandingPageState extends State<BusinessLandingPage> {
 
   // List of pages corresponding to the tabs
   final List<Widget> _pages = [
-    const TouristExplore(), // Explore page
-    const TouristMyJbay(), // My JBay page
-    const Center(child: Text('Settings business')), // Settings page
+    const Center(child: Text('Business Explore')), // Explore page
+    const Center(child: Text('Business My Jbay')), // My JBay page
+    const Center(child: Text('Business Settings')), // Settings page
   ];
 
   // Function to handle tab selection
@@ -48,13 +48,17 @@ class _BusinessLandingPageState extends State<BusinessLandingPage> {
           Navigator(
             key: _navigatorKeys[0],
             onGenerateRoute: (routeSettings) {
-              return MaterialPageRoute(builder: (_) => const TouristExplore());
+              return MaterialPageRoute(
+                builder: (_) => const Center(child: Text('Business Explore')),
+              ); // Explore page
             },
           ),
           Navigator(
             key: _navigatorKeys[1],
             onGenerateRoute: (routeSettings) {
-              return MaterialPageRoute(builder: (_) => const TouristMyJbay());
+              return MaterialPageRoute(
+                builder: (_) => const Center(child: Text('Business My Jbay')),
+              ); // My JBay page
             },
           ),
           Navigator(
@@ -62,7 +66,7 @@ class _BusinessLandingPageState extends State<BusinessLandingPage> {
             onGenerateRoute: (routeSettings) {
               return MaterialPageRoute(
                   builder: (_) =>
-                      const Center(child: Text('Settings business')));
+                      const Center(child: Text('Business Settings')));
             },
           ),
         ],

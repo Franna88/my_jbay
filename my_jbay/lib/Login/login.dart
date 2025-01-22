@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_jbay/Business/business_landing_page.dart';
+import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_pages.dart';
 import 'package:my_jbay/Login/ui/loginTextfields.dart';
 import 'package:my_jbay/Tourist/tourist_landing_page.dart';
 import 'package:my_jbay/commanUi/reusable_button.dart';
@@ -104,6 +105,14 @@ class _LoginState extends State<Login> {
                                 builder: (context) => TouristLandingPage(),
                               ),
                             );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (context) => OnboardingPages(
+                            //       userType: 'Tourist',
+                            //     ),
+                            //   ),
+                            // );
                           } else if (widget.userType == 'Business') {
                             Navigator.push(
                               context,
@@ -111,6 +120,14 @@ class _LoginState extends State<Login> {
                                 builder: (context) => BusinessLandingPage(),
                               ),
                             );
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (context) => OnboardingPages(
+                            //       userType: 'Business',
+                            //     ),
+                            //   ),
+                            // );
                           }
                         },
                       ),
