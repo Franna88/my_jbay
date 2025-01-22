@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_one.dart';
-import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_three.dart';
-import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_page_two.dart';
+import 'package:my_jbay/MainLandingPage/OnboardingPages/onboarding_page_one.dart';
+import 'package:my_jbay/MainLandingPage/OnboardingPages/onboarding_page_three.dart';
+import 'package:my_jbay/MainLandingPage/OnboardingPages/onboarding_page_two.dart';
 import 'package:my_jbay/Tourist/tourist_landing_page.dart';
 import 'package:my_jbay/Business/business_landing_page.dart'; // Import the BusinessLandingPage
 import 'package:my_jbay/commanUi/reusable_button.dart';

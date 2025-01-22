@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_jbay/LandingPage/landingPage.dart';
+import 'package:my_jbay/MainLandingPage/landingPage.dart';
 import 'package:my_jbay/Login/login.dart';
 
 void main() {

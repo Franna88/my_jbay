@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_jbay/LandingPage/OnboardingPages/onboarding_pages.dart';
+import 'package:my_jbay/MainLandingPage/OnboardingPages/onboarding_pages.dart';
 import 'package:my_jbay/Login/login.dart';
 import 'package:my_jbay/Tourist/tourist_landing_page.dart';
 import 'package:my_jbay/commanUi/largeButton.dart';
