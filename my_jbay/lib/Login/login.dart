@@ -6,6 +6,7 @@ import 'package:my_jbay/Login/ui/loginTextfields.dart';
 import 'package:my_jbay/Tourist/tourist_landing_page.dart';
 import 'package:my_jbay/commanUi/reusable_button.dart';
 import 'package:my_jbay/constants/myColors.dart';
+import 'package:my_jbay/constants/my_jbay_textstyle.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
 class Login extends StatefulWidget {
@@ -33,6 +34,7 @@ class _LoginState extends State<Login> {
         child: Stack(
           children: [
             Positioned(
+              top: MediaQuery.of(context).size.height * 0.2,
               bottom: 0,
               child: Container(
                 height: MyUtility(context).height * 0.80,
@@ -49,6 +51,9 @@ class _LoginState extends State<Login> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.1,
+                      ),
                       Text(
                         "WELCOME!",
                         style: TextStyle(
@@ -58,7 +63,7 @@ class _LoginState extends State<Login> {
                             fontFamily: 'BmHanna',
                             letterSpacing: 1),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       Text(
                         "We can’t wait to show\nyou around our town",
                         textAlign: TextAlign.center,
@@ -67,7 +72,7 @@ class _LoginState extends State<Login> {
                             color: Color.fromRGBO(3, 3, 45, 0.70),
                             fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -90,10 +95,8 @@ class _LoginState extends State<Login> {
                         inputController: password,
                         hintText: 'Password',
                       ),
-                      const SizedBox(height: 15),
-                      ReusableButton(
-                        buttonColor: Mycolors().yellow,
-                        buttonText: 'Login',
+                      const SizedBox(height: 20),
+                      InkWell(
                         onTap: () {
                           // You can replace this with actual validation logic
 
@@ -130,6 +133,143 @@ class _LoginState extends State<Login> {
                             // );
                           }
                         },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          height: MyUtility(context).height * 0.06,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            color: Mycolors().yellow,
+                          ),
+                          child: const Center(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: 6),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'Login',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.white,
+                                      fontFamily: 'BmHanna',
+                                      letterSpacing: 1,
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white,
+                                    size: 20, // Size of the icon
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        child: SizedBox(
+                          width: screenWidth * 0.8,
+                          height: screenHeight * 0.045,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white, // White background
+                              side: BorderSide(
+                                  color: Colors.grey.shade400,
+                                  width: 1), // Thin grey border
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                    8), // Optional rounded corners
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset('images/google.png'),
+                                const SizedBox(
+                                    width: 6), // Space between icon and text
+                                Text('Sign Up with Google',
+                                    style: MyJbayTextstyle(context)
+                                        .regularSmallText
+                                        .copyWith(color: Colors.grey.shade400)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      SizedBox(
+                        width: screenWidth * 0.8,
+                        height: screenHeight * 0.045,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white, // White background
+                            side: BorderSide(
+                                color: Colors.grey.shade400,
+                                width: 1), // Thin grey border
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                  8), // Optional rounded corners
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset('images/facebook.png'),
+                              const SizedBox(
+                                  width: 6), // Space between icon and text
+                              Text('Sign Up with Facebook',
+                                  style: MyJbayTextstyle(context)
+                                      .regularSmallText
+                                      .copyWith(color: Colors.grey.shade400)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      RichText(
+                        text: TextSpan(
+                          style: MyJbayTextstyle(context).regularSmallText,
+                          children: [
+                            TextSpan(text: "Forgot password? "),
+                            TextSpan(
+                              text: "Get new",
+                              style: MyJbayTextstyle(context)
+                                  .regularSmallText
+                                  .copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    decoration: TextDecoration.underline,
+                                    color: Mycolors().blue,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5.0),
+                        child: RichText(
+                          text: TextSpan(
+                            style: MyJbayTextstyle(context).regularSmallText,
+                            children: [
+                              TextSpan(text: "Do you have an account? "),
+                              TextSpan(
+                                text: "Create Account",
+                                style: MyJbayTextstyle(context)
+                                    .regularSmallText
+                                    .copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      decoration: TextDecoration.underline,
+                                      color: Mycolors().blue,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -137,7 +277,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             Positioned(
-              top: MyUtility(context).height > 390 ? -35 : -45,
+              top: MyUtility(context).height > 390 ? -40 : -50,
               right: MyUtility(context).height > 390
                   ? screenWidth * 0.10
                   : screenWidth * 0.15,

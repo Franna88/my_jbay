@@ -5,13 +5,15 @@ class ReusableButton extends StatelessWidget {
   final String buttonText;
   final Function() onTap;
   final double? customWidth; // New parameter for width customization
+  final double? customHeight;
 
   const ReusableButton({
     super.key,
     required this.buttonColor,
     required this.buttonText,
     required this.onTap,
-    this.customWidth, // Default value is 0.8
+    this.customWidth,
+    this.customHeight, // Default value is 0.8
   });
 
   @override
@@ -20,6 +22,7 @@ class ReusableButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: customWidth ?? MediaQuery.of(context).size.width * 0.8,
+        height: customHeight ?? null,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           color: buttonColor,
