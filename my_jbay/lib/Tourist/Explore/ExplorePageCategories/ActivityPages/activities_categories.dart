@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/Tourist/Explore/ExplorePageCategories/art_page.dart';
 import 'package:my_jbay/commanUi/back_button_and_logo.dart';
 import 'package:my_jbay/commanUi/category_list.dart';
 import 'package:my_jbay/commanUi/reusable_category_container.dart';
@@ -19,82 +20,52 @@ class ActivitiesCategories extends StatelessWidget {
       {
         'imagePath': 'images/art.png',
         'title': 'art',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const ArtPage(),
       },
       {
         'imagePath': 'images/events.png',
         'title': 'events',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/kids.png',
         'title': 'kids',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/markets.png',
         'title': 'markets',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/municipality.png',
         'title': 'municipality',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/music.png',
         'title': 'music',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/outdoor.png',
         'title': 'outdoor',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/shops.png',
         'title': 'shops',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/waves.png',
         'title': 'waves',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/other.png',
         'title': 'other',
-        'onTap': () {
-          // Action for Specials category
-          // Leave empty for now
-        }
+        'page': const Center(child: Text('Link Page')),
       },
       // Add more categories as needed
     ];
