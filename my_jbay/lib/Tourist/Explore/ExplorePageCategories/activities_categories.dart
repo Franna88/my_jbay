@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/commanUi/back_button_and_logo.dart';
+import 'package:my_jbay/commanUi/category_list.dart';
 import 'package:my_jbay/commanUi/reusable_category_container.dart';
 import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
@@ -126,17 +127,7 @@ class ActivitiesCategories extends StatelessWidget {
                           title: 'Activities',
                           backgroundColor: Mycolors().yellow),
                     ),
-                    Wrap(
-                      runSpacing: 20.0,
-                      spacing: 20.0,
-                      children: categories.map((category) {
-                        return ReusableCategoryContainer(
-                          imagePath: category['imagePath']!,
-                          title: category['title']!,
-                          onTap: category['onTap'] as VoidCallback,
-                        );
-                      }).toList(),
-                    ),
+                    CategoryList(categories: categories)
                   ],
                 ),
               ),
