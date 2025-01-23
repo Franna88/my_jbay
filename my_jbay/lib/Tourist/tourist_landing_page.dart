@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/Explore/tourist_explore.dart';
 import 'package:my_jbay/Tourist/MyJbay/tourist_my_jbay.dart';
+import 'package:my_jbay/Tourist/Settings/tourist_settings.dart';
 import 'package:my_jbay/commanUi/main_navbar.dart';
 
 class TouristLandingPage extends StatefulWidget {
@@ -60,9 +61,7 @@ class _TouristLandingPageState extends State<TouristLandingPage> {
           Navigator(
             key: _navigatorKeys[2],
             onGenerateRoute: (routeSettings) {
-              return MaterialPageRoute(
-                  builder: (_) =>
-                      const Center(child: Text('Tourist Settings')));
+              return MaterialPageRoute(builder: (_) => const TouristSettings());
             },
           ),
         ],

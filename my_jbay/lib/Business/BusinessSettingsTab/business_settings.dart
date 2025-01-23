@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_jbay/Business/BusinessSettingsTab/business_edit_profile.dart';
 import 'package:my_jbay/Tourist/Settings/edit_profile_tourist.dart';
 import 'package:my_jbay/commanUi/largeButton.dart';
 import 'package:my_jbay/commanUi/reusable_button.dart';
@@ -7,9 +8,9 @@ import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/my_jbay_textstyle.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class TouristSettings extends StatelessWidget {
+class BusinessSettings extends StatelessWidget {
   final String userName = 'User Name';
-  const TouristSettings({super.key});
+  const BusinessSettings({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +53,25 @@ class TouristSettings extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => EditProfileTourist(),
+                          builder: (context) => EditProfileBusiness(),
                         ),
                       );
                     }),
+                SizedBox(height: MyUtility(context).height * 0.015),
+                ReusableButton(
+                    buttonColor: Mycolors().yellow,
+                    buttonText: 'Business Membership',
+                    onTap: () {}),
+                SizedBox(height: MyUtility(context).height * 0.015),
+                ReusableButton(
+                    buttonColor: Mycolors().yellow,
+                    buttonText: 'Place an Advert',
+                    onTap: () {}),
+                SizedBox(height: MyUtility(context).height * 0.015),
+                ReusableButton(
+                    buttonColor: Mycolors().yellow,
+                    buttonText: 'List an Event',
+                    onTap: () {}),
                 SizedBox(height: MyUtility(context).height * 0.015),
                 ReusableButton(
                     buttonColor: Mycolors().yellow,

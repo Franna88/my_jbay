@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/constants/myColors.dart';
 
 class MyJbayTextstyle {
   BuildContext context;
@@ -11,6 +12,22 @@ class MyJbayTextstyle {
         fontSize: width / 14,
         fontWeight: FontWeight.w600,
         color: Colors.white,
+        letterSpacing: 1,
+      );
+
+  TextStyle get blueStyleHeader => TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.normal,
+        color: Mycolors().blue,
+        fontFamily: 'BmHanna',
+        letterSpacing: 1,
+      );
+
+  TextStyle get yellowStyleHeader => TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.normal,
+        color: Mycolors().yellow,
+        fontFamily: 'BmHanna',
         letterSpacing: 1,
       );
 

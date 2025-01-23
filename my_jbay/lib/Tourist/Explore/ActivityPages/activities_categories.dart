@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_jbay/Tourist/Explore/ExplorePageCategories/art_page.dart';
-import 'package:my_jbay/commanUi/back_button_and_logo.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/art_page.dart';
+import 'package:my_jbay/commanUi/top_page_componants.dart';
 import 'package:my_jbay/commanUi/category_list.dart';
 import 'package:my_jbay/commanUi/reusable_category_container.dart';
 import 'package:my_jbay/commanUi/reusable_page_title.dart';
@@ -78,7 +78,9 @@ class ActivitiesCategories extends StatelessWidget {
         child: Column(
           children: [
             // Top section with Icon and Centered Logo
-            BackButtonAndLogo(),
+            TopPageComponants(
+              showLogo: true,
+            ),
             // Bottom section with categories
             Expanded(
               child: Container(

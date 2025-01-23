@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_jbay/Tourist/Explore/ExplorePageCategories/ActivityPages/activities_categories.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/activities_categories.dart';
 import 'package:my_jbay/commanUi/reusable_category_container.dart';
 import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
