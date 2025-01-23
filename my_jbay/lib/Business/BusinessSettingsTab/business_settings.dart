@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_jbay/Business/BusinessSettingsTab/business_edit_profile.dart';
+import 'package:my_jbay/Business/BusinessSettingsTab/business_membership.dart';
 import 'package:my_jbay/Tourist/Settings/edit_profile_tourist.dart';
 import 'package:my_jbay/commanUi/largeButton.dart';
 import 'package:my_jbay/commanUi/reusable_button.dart';
@@ -61,7 +62,14 @@ class BusinessSettings extends StatelessWidget {
                 ReusableButton(
                     buttonColor: Mycolors().yellow,
                     buttonText: 'Business Membership',
-                    onTap: () {}),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BusinessMembership(),
+                        ),
+                      );
+                    }),
                 SizedBox(height: MyUtility(context).height * 0.015),
                 ReusableButton(
                     buttonColor: Mycolors().yellow,
