@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/art_page.dart';
-import 'package:my_jbay/Tourist/Explore/ActivityPages/jbay_shops.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/kids_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/markets_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/municipality_page.dart';
@@ -14,8 +13,8 @@ import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class ActivitiesCategories extends StatelessWidget {
-  const ActivitiesCategories({super.key});
+class JbayShops extends StatelessWidget {
+  const JbayShops({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,59 +24,69 @@ class ActivitiesCategories extends StatelessWidget {
     // List of categories with imagePath, title, and unique onTap functionality
     final List<Map<String, dynamic>> categories = [
       {
-        'imagePath': 'images/art.png',
-        'title': 'art',
-        'page': const ArtPage(),
-      },
-      {
-        'imagePath': 'images/events.png',
-        'title': 'events',
+        'imagePath': 'images/clothing.png',
+        'title': 'clothing',
         'page': const Center(child: Text('Link Page')),
       },
       {
-        'imagePath': 'images/kids.png',
-        'title': 'kids',
-        'page': const KidsPage(),
-      },
-      {
-        'imagePath': 'images/markets.png',
-        'title': 'markets',
-        'page': const MarketsPage(),
-      },
-      {
-        'imagePath': 'images/municipality.png',
-        'title': 'municipality',
-        'page': const MunicipalityPage(),
-      },
-      {
-        'imagePath': 'images/music.png',
-        'title': 'music',
-        'page': const MusicPage(),
-      },
-      {
-        'imagePath': 'images/outdoor.png',
-        'title': 'outdoor',
-        'page': const OutdoorPage(),
-      },
-      {
-        'imagePath': 'images/shops.png',
-        'title': 'shops',
-        'page': const JbayShops(),
-      },
-      {
-        'imagePath': 'images/waves.png',
-        'title': 'waves',
+        'imagePath': 'images/fishing.png',
+        'title': 'fishing',
         'page': const Center(child: Text('Link Page')),
       },
       {
-        'imagePath': 'images/other.png',
-        'title': 'other',
+        'imagePath': 'images/butchery.png',
+        'title': 'butchery',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/buy_&_sell.png',
+        'title': 'buy & sell',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/water.png',
+        'title': 'water',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/wellness.png',
+        'title': 'wellness',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/toys.png',
+        'title': 'toys',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/baby_&_kids.png',
+        'title': 'baby & kids',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/bake.png',
+        'title': 'bake',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/bicycle.png',
+        'title': 'bicycle',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/books.png',
+        'title': 'books',
+        'page': const Center(child: Text('Link Page')),
+      },
+      {
+        'imagePath': 'images/crafts_&_gifts.png',
+        'title': 'crafts & gifts',
         'page': const Center(child: Text('Link Page')),
       },
       // Add more categories as needed
     ];
 
     return GreyContainerPageLayout(
-        title: 'Activities', bodyContent: CategoryList(categories: categories));
+        title: 'Jbay Shops', bodyContent: CategoryList(categories: categories));
   }
 }

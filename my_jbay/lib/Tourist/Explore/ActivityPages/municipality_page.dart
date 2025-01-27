@@ -8,50 +8,50 @@ import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class ArtPage extends StatelessWidget {
-  const ArtPage({super.key});
+class MunicipalityPage extends StatelessWidget {
+  const MunicipalityPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> business = [
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 1',
-        'page': const ArtPage(),
+        'title': 'Municipality 1',
+        'page': const MunicipalityPage(),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 2',
+        'title': 'Municipality 2',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 3',
+        'title': 'Municipality 3',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 4',
+        'title': 'Municipality 4',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 5',
+        'title': 'Municipality 5',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 6',
+        'title': 'Municipality 6',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 7',
+        'title': 'Municipality 7',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 8',
+        'title': 'Municipality 8',
         'page': const Center(child: Text('Link Page')),
       },
 
@@ -60,6 +60,7 @@ class ArtPage extends StatelessWidget {
     // List of categories with imagePath, title, and unique onTap functionality
 
     return GreyContainerPageLayout(
-        title: 'Art', bodyContent: BusinessListing(businesses: business));
+        title: 'Municipality',
+        bodyContent: BusinessListing(businesses: business));
   }
 }

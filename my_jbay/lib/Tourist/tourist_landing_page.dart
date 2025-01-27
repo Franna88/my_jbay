@@ -25,7 +25,7 @@ class _TouristLandingPageState extends State<TouristLandingPage> {
   final List<Widget> _pages = [
     const TouristExplore(), // Explore page
     const TouristMyJbay(), // My JBay page
-    const Center(child: Text('Tourist Settings Page')), // Settings page
+    const TouristSettings(), // Settings page
   ];
 
   // Function to handle tab selection

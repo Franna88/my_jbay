@@ -8,50 +8,50 @@ import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class ArtPage extends StatelessWidget {
-  const ArtPage({super.key});
+class MusicPage extends StatelessWidget {
+  const MusicPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> business = [
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 1',
-        'page': const ArtPage(),
+        'title': 'Music 1',
+        'page': const MusicPage(),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 2',
+        'title': 'Music 2',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 3',
+        'title': 'Music 3',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 4',
+        'title': 'Music 4',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 5',
+        'title': 'Music 5',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 6',
+        'title': 'Music 6',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 7',
+        'title': 'Music 7',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
-        'title': 'Art 8',
+        'title': 'Music 8',
         'page': const Center(child: Text('Link Page')),
       },
 
@@ -60,6 +60,6 @@ class ArtPage extends StatelessWidget {
     // List of categories with imagePath, title, and unique onTap functionality
 
     return GreyContainerPageLayout(
-        title: 'Art', bodyContent: BusinessListing(businesses: business));
+        title: 'Music', bodyContent: BusinessListing(businesses: business));
   }
 }
