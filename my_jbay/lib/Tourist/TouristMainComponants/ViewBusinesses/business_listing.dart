@@ -33,7 +33,7 @@ class BusinessListing extends StatelessWidget {
 
 //define list in parent file like so...
 
-// final List<Map<String, dynamic>> categories = [
+// final List<Map<String, dynamic>> businesses = [
 //       {
 //         'imagePath': 'images/art.png',
 //         'title': 'art',

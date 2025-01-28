@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/constants/navbar_controller.dart';
+import 'package:provider/provider.dart';
+
 import 'package:my_jbay/MainLandingPage/landingPage.dart';
-import 'package:my_jbay/Login/login.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => NavbarController(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,8 +18,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: LandingPage(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const LandingPage(),
     );
   }
 }

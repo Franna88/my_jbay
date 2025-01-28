@@ -8,13 +8,13 @@ import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class AboutBusiness extends StatelessWidget {
-  const AboutBusiness({super.key});
+class NowOnTab extends StatelessWidget {
+  const NowOnTab({super.key});
 
   @override
   Widget build(BuildContext context) {
     // List of categories with imagePath, title, and unique onTap functionality
 
-    return GreyContainerPageLayout(title: 'About', bodyContent: Placeholder());
+    return GreyContainerPageLayout(title: 'Now On', bodyContent: Placeholder());
   }
 }
