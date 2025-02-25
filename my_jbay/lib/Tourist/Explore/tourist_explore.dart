@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/Tourist/Explore/911/911.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/activities_categories.dart';
+import 'package:my_jbay/Tourist/Explore/Food/food.dart';
+import 'package:my_jbay/Tourist/Explore/JobPost/job_post_page.dart';
+import 'package:my_jbay/Tourist/Explore/LocalLiving/local_living.dart';
+import 'package:my_jbay/Tourist/Explore/Lost&Found/lost_and_found.dart';
+import 'package:my_jbay/Tourist/Explore/News/news.dart';
+import 'package:my_jbay/Tourist/Explore/Services/services.dart';
+import 'package:my_jbay/Tourist/Explore/Specials/specials.dart';
+import 'package:my_jbay/Tourist/Explore/WhereToStay/accommodation.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/Categories/reusable_category_container.dart';
 import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
@@ -19,7 +28,7 @@ class TouristExplore extends StatelessWidget {
       {
         'imagePath': 'images/specials.png',
         'title': 'Specials',
-        'page': const Center(child: Text('Specials Page')),
+        'page': const Specials(),
       },
       {
         'imagePath': 'images/activities.png',
@@ -29,42 +38,42 @@ class TouristExplore extends StatelessWidget {
       {
         'imagePath': 'images/where_to_stay.png',
         'title': 'Where to Stay',
-        'page': const Center(child: Text('Where to Stay Page')),
+        'page': const Accommodation(),
       },
       {
         'imagePath': 'images/food.png',
         'title': 'Food',
-        'page': const Center(child: Text('Food Page')),
+        'page': const Food(),
       },
       {
         'imagePath': 'images/news.png',
         'title': 'News',
-        'page': const Center(child: Text('News Page')),
+        'page': const News(),
       },
       {
         'imagePath': 'images/services.png',
         'title': 'Services',
-        'page': const Center(child: Text('Services Page')),
+        'page': const Services(),
       },
       {
         'imagePath': 'images/lost.png',
         'title': 'Lost',
-        'page': const Center(child: Text('Lost Page')),
+        'page': const LostAndFound(),
       },
       {
         'imagePath': 'images/jobs.png',
         'title': 'Jobs',
-        'page': const Center(child: Text('Jobs Page')),
+        'page': const JobPost(),
       },
       {
         'imagePath': 'images/911.png',
         'title': '911',
-        'page': const Center(child: Text('911 Page')),
+        'page': const NineOneOne(),
       },
       {
         'imagePath': 'images/local.png',
         'title': 'Local',
-        'page': const Center(child: Text('Local Page')),
+        'page': const LocalLiving(),
       },
     ];
 

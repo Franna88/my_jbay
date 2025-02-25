@@ -31,13 +31,28 @@ class MyJbayTextstyle {
         letterSpacing: 1,
       );
 
+  TextStyle get blacksStyleSubheader => TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.normal,
+        color: Colors.black,
+        fontFamily: 'BmHanna',
+        letterSpacing: 1,
+      );
+
   // Body Text Styles
 
   TextStyle get regularSmallText => TextStyle(
         fontFamily: 'Nunito',
-        fontSize: width / 26,
+        fontSize: 18,
         fontWeight: FontWeight.w500,
         color: Colors.black,
+      );
+
+  TextStyle get smallGreyText => TextStyle(
+        fontFamily: 'Nunito',
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        color: Colors.grey,
       );
 
   TextStyle get styleSmallText => TextStyle(

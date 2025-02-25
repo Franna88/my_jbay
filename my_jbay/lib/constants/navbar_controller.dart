@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 
-class NavbarController extends ChangeNotifier {
-  int _navbarType = 0; // 0: MainNavbar, 1: AlternateNavbar
+class NavbarVisibilityProvider with ChangeNotifier {
+  bool _isNavbarVisible = true; // Default to visible
 
-  int get navbarType => _navbarType;
+  bool get isNavbarVisible => _isNavbarVisible;
 
-  void switchNavbar(int type) {
-    _navbarType = type;
+  void showNavbar() {
+    _isNavbarVisible = true;
+    notifyListeners();
+  }
+
+  void hideNavbar() {
+    _isNavbarVisible = false;
+    notifyListeners();
+  }
+
+  void toggleNavbar() {
+    _isNavbarVisible = !_isNavbarVisible;
     notifyListeners();
   }
 }

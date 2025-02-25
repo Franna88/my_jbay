@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:my_jbay/constants/navbar_controller.dart';
+import 'package:provider/provider.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/reusable_view_business_containers.dart';
 
 class BusinessListing extends StatelessWidget {
@@ -17,18 +18,25 @@ class BusinessListing extends StatelessWidget {
           imagePath: business['imagePath']!,
           title: business['title']!,
           onTap: () {
+            // Hide navbar
+            context.read<NavbarVisibilityProvider>().hideNavbar();
+
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (_) => business['page'] as Widget,
               ),
-            );
+            ).then((_) {
+              // Show navbar again when returning
+              context.read<NavbarVisibilityProvider>().showNavbar();
+            });
           },
         );
       }).toList(),
     );
   }
 }
+
 
 
 //define list in parent file like so...

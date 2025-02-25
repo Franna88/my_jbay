@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/about_tab.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/map_tab.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/now_on_tab.dart';
 import 'package:my_jbay/constants/myColors.dart';
 
@@ -22,7 +23,7 @@ class _ViewShopNavbarState extends State<ViewShopNavbar> {
   final List<Widget> _pages = [
     const AboutTab(),
     const NowOnTab(),
-    const Center(child: Text('Map Page')), // Replace with your Map page widget
+    const MapTab(), // Replace with your Map page widget
     const Center(child: Text('Web Page')), // Replace with your Web page widget
     const Center(
         child: Text('Contact Page')), // Replace with your Contact page widget
