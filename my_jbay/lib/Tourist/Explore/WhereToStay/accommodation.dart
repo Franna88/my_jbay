@@ -14,8 +14,8 @@ import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class ActivitiesCategories extends StatelessWidget {
-  const ActivitiesCategories({super.key});
+class Accommodation extends StatelessWidget {
+  const Accommodation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,59 +25,45 @@ class ActivitiesCategories extends StatelessWidget {
     // List of categories with imagePath, title, and unique onTap functionality
     final List<Map<String, dynamic>> categories = [
       {
-        'imagePath': 'images/art.png',
-        'title': 'art',
-        'page': const ArtPage(),
+        'imagePath': 'images/backpackers.png',
+        'title': 'backpackers',
+        'page': () {},
       },
       {
-        'imagePath': 'images/events.png',
-        'title': 'events',
-        'page': const Center(child: Text('Link Page')),
+        'imagePath': 'images/camp.png',
+        'title': 'camp',
+        'page': () {},
       },
       {
-        'imagePath': 'images/kids.png',
-        'title': 'kids',
-        'page': const KidsPage(),
+        'imagePath': 'images/guest_house.png',
+        'title': 'guesthouse',
+        'page': () {},
       },
       {
-        'imagePath': 'images/markets.png',
-        'title': 'markets',
-        'page': const MarketsPage(),
+        'imagePath': 'images/holiday_house.png',
+        'title': 'holidayhouse',
+        'page': () {},
       },
       {
-        'imagePath': 'images/municipality.png',
-        'title': 'municipality',
-        'page': const MunicipalityPage(),
+        'imagePath': 'images/hotel.png',
+        'title': 'hotel',
+        'page': () {},
       },
       {
-        'imagePath': 'images/music.png',
-        'title': 'music',
-        'page': const MusicPage(),
-      },
-      {
-        'imagePath': 'images/outdoor.png',
-        'title': 'outdoor',
-        'page': const OutdoorPage(),
-      },
-      {
-        'imagePath': 'images/shops.png',
-        'title': 'shops',
-        'page': const JbayShops(),
-      },
-      {
-        'imagePath': 'images/waves.png',
-        'title': 'waves',
-        'page': const Center(child: Text('Link Page')),
+        'imagePath': 'images/lodge.png',
+        'title': 'lodge',
+        'page': () {},
       },
       {
         'imagePath': 'images/other.png',
         'title': 'other',
-        'page': const Center(child: Text('Link Page')),
+        'page': () {},
       },
       // Add more categories as needed
     ];
 
     return GreyContainerPageLayout(
-        title: 'Activities', bodyContent: CategoryList(categories: categories));
+        title: 'Accommodation',
+        bodyContent: CategoryList(categories: categories));
   }
 }

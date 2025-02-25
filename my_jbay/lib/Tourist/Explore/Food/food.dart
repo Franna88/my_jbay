@@ -14,8 +14,8 @@ import 'package:my_jbay/commanUi/reusable_page_title.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class ActivitiesCategories extends StatelessWidget {
-  const ActivitiesCategories({super.key});
+class Food extends StatelessWidget {
+  const Food({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,59 +25,54 @@ class ActivitiesCategories extends StatelessWidget {
     // List of categories with imagePath, title, and unique onTap functionality
     final List<Map<String, dynamic>> categories = [
       {
-        'imagePath': 'images/art.png',
-        'title': 'art',
-        'page': const ArtPage(),
+        'imagePath': 'images/bakerysweet.png',
+        'title': 'bakery/sweet',
+        'page': () {},
       },
       {
-        'imagePath': 'images/events.png',
-        'title': 'events',
-        'page': const Center(child: Text('Link Page')),
+        'imagePath': 'images/sitdown.png',
+        'title': 'sit down',
+        'page': () {},
       },
       {
-        'imagePath': 'images/kids.png',
-        'title': 'kids',
-        'page': const KidsPage(),
+        'imagePath': 'images/takeaway.png',
+        'title': 'take away',
+        'page': () {},
       },
       {
-        'imagePath': 'images/markets.png',
-        'title': 'markets',
-        'page': const MarketsPage(),
+        'imagePath': 'images/coffee.png',
+        'title': 'coffee',
+        'page': () {},
       },
       {
-        'imagePath': 'images/municipality.png',
-        'title': 'municipality',
-        'page': const MunicipalityPage(),
+        'imagePath': 'images/deli.png',
+        'title': 'deli',
+        'page': () {},
       },
       {
-        'imagePath': 'images/music.png',
-        'title': 'music',
-        'page': const MusicPage(),
+        'imagePath': 'images/drinks.png',
+        'title': 'drinks',
+        'page': () {},
       },
       {
-        'imagePath': 'images/outdoor.png',
-        'title': 'outdoor',
-        'page': const OutdoorPage(),
+        'imagePath': 'images/delivery.png',
+        'title': 'delivery',
+        'page': () {},
       },
       {
-        'imagePath': 'images/shops.png',
-        'title': 'shops',
-        'page': const JbayShops(),
-      },
-      {
-        'imagePath': 'images/waves.png',
-        'title': 'waves',
-        'page': const Center(child: Text('Link Page')),
+        'imagePath': 'images/catering.png',
+        'title': 'catering',
+        'page': () {},
       },
       {
         'imagePath': 'images/other.png',
         'title': 'other',
-        'page': const Center(child: Text('Link Page')),
+        'page': () {},
       },
       // Add more categories as needed
     ];
 
     return GreyContainerPageLayout(
-        title: 'Activities', bodyContent: CategoryList(categories: categories));
+        title: 'Food', bodyContent: CategoryList(categories: categories));
   }
 }

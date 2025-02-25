@@ -7,66 +7,59 @@ import 'package:my_jbay/Tourist/Explore/ActivityPages/municipality_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/music_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/outdoor_page.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
-import 'package:my_jbay/commanUi/top_page_componants.dart';
-import 'package:my_jbay/Tourist/TouristMainComponants/Categories/category_list.dart';
-import 'package:my_jbay/Tourist/TouristMainComponants/Categories/reusable_category_container.dart';
-import 'package:my_jbay/commanUi/reusable_page_title.dart';
-import 'package:my_jbay/constants/myColors.dart';
-import 'package:my_jbay/constants/myutility.dart';
 
-class ActivitiesCategories extends StatelessWidget {
-  const ActivitiesCategories({super.key});
+import 'package:my_jbay/Tourist/TouristMainComponants/Categories/category_list.dart';
+
+class LocalLiving extends StatelessWidget {
+  const LocalLiving({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-
     // List of categories with imagePath, title, and unique onTap functionality
     final List<Map<String, dynamic>> categories = [
       {
-        'imagePath': 'images/art.png',
-        'title': 'art',
-        'page': const ArtPage(),
+        'imagePath': 'images/creative.png',
+        'title': 'creative',
+        'page': () {},
       },
       {
-        'imagePath': 'images/events.png',
-        'title': 'events',
+        'imagePath': 'images/worship.png',
+        'title': 'worship',
         'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/kids.png',
-        'title': 'kids',
+        'title': 'custom made',
         'page': const KidsPage(),
       },
       {
-        'imagePath': 'images/markets.png',
-        'title': 'markets',
+        'imagePath': 'images/hand_made.png',
+        'title': 'hand made',
         'page': const MarketsPage(),
       },
       {
-        'imagePath': 'images/municipality.png',
-        'title': 'municipality',
+        'imagePath': 'images/lessons.png',
+        'title': 'lessons',
         'page': const MunicipalityPage(),
       },
       {
-        'imagePath': 'images/music.png',
-        'title': 'music',
+        'imagePath': 'images/npo.png',
+        'title': 'NPO',
         'page': const MusicPage(),
       },
       {
         'imagePath': 'images/outdoor.png',
-        'title': 'outdoor',
+        'title': 'training',
         'page': const OutdoorPage(),
       },
       {
-        'imagePath': 'images/shops.png',
-        'title': 'shops',
+        'imagePath': 'images/schools.png',
+        'title': 'schools',
         'page': const JbayShops(),
       },
       {
-        'imagePath': 'images/waves.png',
-        'title': 'waves',
+        'imagePath': 'images/clubs.png',
+        'title': 'clubs',
         'page': const Center(child: Text('Link Page')),
       },
       {
@@ -78,6 +71,7 @@ class ActivitiesCategories extends StatelessWidget {
     ];
 
     return GreyContainerPageLayout(
-        title: 'Activities', bodyContent: CategoryList(categories: categories));
+        title: 'Local Living',
+        bodyContent: CategoryList(categories: categories));
   }
 }

@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/view_shop_navbar.dart';
+import 'package:my_jbay/constants/navbar_controller.dart';
+import 'package:provider/provider.dart';
+
 import 'package:my_jbay/MainLandingPage/landingPage.dart';
-import 'package:my_jbay/Login/login.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => NavbarVisibilityProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,8 +21,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: LandingPage(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const LandingPage(),
     );
   }
 }
