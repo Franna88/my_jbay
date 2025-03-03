@@ -37,8 +37,6 @@ class BusinessListing extends StatelessWidget {
   }
 }
 
-
-
 //define list in parent file like so...
 
 // final List<Map<String, dynamic>> businesses = [

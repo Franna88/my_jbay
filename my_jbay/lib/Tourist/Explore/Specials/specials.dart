@@ -1,52 +1,70 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/Tourist/Explore/Specials/special_category_filter.dart';
+import 'package:my_jbay/Tourist/Explore/Specials/special_post_containers.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/Categories/reusable_category_container.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/custom_search_bar.dart';
 import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/my_jbay_textstyle.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class Specials extends StatelessWidget {
-  final String userName = 'Franna';
+class Specials extends StatefulWidget {
   const Specials({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    List<Map<String, dynamic>> categories = [
-      {
-        'title': 'food',
-        'imagePath': 'images/food.png',
-        'onTap': () {
-          print('Tapped on Food');
-          // Add more logic for "Food" category tap
-        }
-      },
-      {
-        'title': 'events',
-        'imagePath': 'images/events.png',
-        'onTap': () {
-          print('Tapped on events');
-          // Add more logic for "events" category tap
-        }
-      },
-      {
-        'title': 'shopping',
-        'imagePath': 'images/shops.png',
-        'onTap': () {
-          print('Tapped on Drinks');
-          // Add more logic for "Drinks" category tap
-        }
-      },
-      {
-        'title': 'activities',
-        'imagePath': 'images/activities.png',
-        'onTap': () {
-          print('Tapped on activities');
-          // Add more logic for "activities" category tap
-        }
-      },
+  State<Specials> createState() => _SpecialsState();
+}
 
-      // Add more categories and unique onTap actions as needed
-    ];
+class _SpecialsState extends State<Specials> {
+  final String userName = 'Franna';
+  String selectedCategory = 'all';
+
+  // Categories List
+  final List<Map<String, dynamic>> categories = [
+    {'title': 'all', 'imagePath': 'images/myJbay_top_page_logo.png'},
+    {'title': 'food', 'imagePath': 'images/food.png'},
+    {'title': 'events', 'imagePath': 'images/events.png'},
+    {'title': 'shopping', 'imagePath': 'images/shops.png'},
+    {'title': 'activities', 'imagePath': 'images/activities.png'},
+  ];
+
+  // Specials List
+  final List<Map<String, String>> specials = [
+    {
+      'imageUrl': 'images/event_paint.png',
+      'specialTitle': 'Paint & Sip Night',
+      'location': 'Art Café, Jeffreys Bay',
+      'dateTime': 'March 25 - 6:00 PM',
+      'category': 'events',
+    },
+    {
+      'imageUrl': 'images/event_padel.png',
+      'specialTitle': 'Dinner Special',
+      'location': 'Seaside Grill',
+      'dateTime': 'March 30 - 7:30 PM',
+      'category': 'food',
+    },
+    {
+      'imageUrl': 'images/event_paint.png',
+      'specialTitle': 'Summer Sale 50% Off',
+      'location': 'JBay Fashion Outlet',
+      'dateTime': 'April 1 - All Day',
+      'category': 'shopping',
+    },
+    {
+      'imageUrl': 'images/event_padel.png',
+      'specialTitle': 'Free Surf Lessons',
+      'location': 'Main Beach, Jeffreys Bay',
+      'dateTime': 'April 5 - 10:00 AM',
+      'category': 'activities',
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // Filter specials based on selected category
+    List<Map<String, String>> filteredSpecials = selectedCategory == 'all'
+        ? specials
+        : specials.where((s) => s['category'] == selectedCategory).toList();
 
     return Scaffold(
       backgroundColor: Mycolors().lightGrey,
@@ -61,9 +79,10 @@ class Specials extends StatelessWidget {
                 Row(
                   children: [
                     SizedBox(
-                        width: MyUtility(context).width * 0.65,
-                        child: CustomSearchBar()),
-                    Spacer(),
+                      width: MyUtility(context).width * 0.65,
+                      child: CustomSearchBar(),
+                    ),
+                    const Spacer(),
                     Image.asset(
                       'images/myJbay_top_page_logo.png',
                       width: MyUtility(context).width * 0.3,
@@ -81,9 +100,9 @@ class Specials extends StatelessWidget {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                                text: 'SPECIALS ',
-                                style:
-                                    MyJbayTextstyle(context).yellowStyleHeader),
+                              text: 'SPECIALS ',
+                              style: MyJbayTextstyle(context).yellowStyleHeader,
+                            ),
                             TextSpan(
                               text: 'for $userName!',
                               style: MyJbayTextstyle(context)
@@ -96,41 +115,48 @@ class Specials extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Horizontal scrolling containers at the top
-                Container(
-                  height: MyUtility(context).height * 0.14,
+                // Horizontal scrolling categories
+                SizedBox(
+                  height: MyUtility(context).height * 0.13,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: categories.length, // Adjust as needed
+                    itemCount: categories.length,
                     itemBuilder: (context, index) {
                       var category = categories[index];
+                      bool isSelected = selectedCategory == category['title'];
+
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: ReusableCategoryContainer(
-                          title: category['title']!,
-                          imagePath: category['imagePath']!,
-                          onTap: category['onTap'],
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedCategory = category['title']!;
+                            });
+                          },
+                          child: SpecialCategoryFilter(
+                            title: category['title']!,
+                            imagePath: category['imagePath']!,
+                            isSelected: isSelected, // Add this
+                          ),
                         ),
                       );
                     },
                   ),
                 ),
-
-                // Vertical scrolling containers underneath
+                // Vertical scrolling special post containers (Filtered)
                 ListView.builder(
-                  shrinkWrap:
-                      true, // Ensures the list doesn't take all available space
-                  physics:
-                      NeverScrollableScrollPhysics(), // Prevents nested scrolling
-                  itemCount: 20, // Adjust as needed
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: filteredSpecials.length,
                   itemBuilder: (context, index) {
+                    var special = filteredSpecials[index];
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 150,
-                        color:
-                            Colors.green[(index + 1) * 100], // Just for example
-                        child: Center(child: Text('Post ${index + 1}')),
+                      child: SpecialPostContainers(
+                        imageUrl: special['imageUrl']!,
+                        specialTitle: special['specialTitle']!,
+                        location: special['location']!,
+                        dateTime: special['dateTime']!,
                       ),
                     );
                   },
@@ -141,6 +167,5 @@ class Specials extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

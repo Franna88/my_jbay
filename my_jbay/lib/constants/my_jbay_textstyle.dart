@@ -6,17 +6,20 @@ class MyJbayTextstyle {
   MyJbayTextstyle(this.context);
 
   double get width => MediaQuery.of(context).size.width;
+  double get height => MediaQuery.of(context).size.height;
+  double get minSize => (width + height) / 2; // Average screen dimension
+
   // Header Styles
   TextStyle get header1 => TextStyle(
         fontFamily: 'BmHanna',
-        fontSize: width / 14,
+        fontSize: minSize * 0.05, // Responsive size
         fontWeight: FontWeight.w600,
         color: Colors.white,
         letterSpacing: 1,
       );
 
   TextStyle get blueStyleHeader => TextStyle(
-        fontSize: 30,
+        fontSize: minSize * 0.035, // Adjusted for responsiveness
         fontWeight: FontWeight.normal,
         color: Mycolors().blue,
         fontFamily: 'BmHanna',
@@ -24,7 +27,7 @@ class MyJbayTextstyle {
       );
 
   TextStyle get yellowStyleHeader => TextStyle(
-        fontSize: 30,
+        fontSize: minSize * 0.035, // Adjusted for responsiveness
         fontWeight: FontWeight.normal,
         color: Mycolors().yellow,
         fontFamily: 'BmHanna',
@@ -32,7 +35,7 @@ class MyJbayTextstyle {
       );
 
   TextStyle get blacksStyleSubheader => TextStyle(
-        fontSize: 24,
+        fontSize: minSize * 0.04, // Adjusted for responsiveness
         fontWeight: FontWeight.normal,
         color: Colors.black,
         fontFamily: 'BmHanna',
@@ -43,21 +46,21 @@ class MyJbayTextstyle {
 
   TextStyle get regularSmallText => TextStyle(
         fontFamily: 'Nunito',
-        fontSize: 18,
+        fontSize: minSize * 0.025, // Adjusted for responsiveness
         fontWeight: FontWeight.w500,
         color: Colors.black,
       );
 
   TextStyle get smallGreyText => TextStyle(
         fontFamily: 'Nunito',
-        fontSize: 14,
+        fontSize: minSize * 0.02, // Adjusted for responsiveness
         fontWeight: FontWeight.w500,
         color: Colors.grey,
       );
 
   TextStyle get styleSmallText => TextStyle(
         fontFamily: 'BmHanna',
-        fontSize: width / 26,
+        fontSize: minSize * 0.025, // Adjusted for responsiveness
         fontWeight: FontWeight.w500,
         color: Colors.black,
       );
@@ -70,7 +73,7 @@ class MyJbayTextstyle {
   }) {
     return TextStyle(
       fontFamily: 'BM_HANNA_TTF',
-      fontSize: fontSize,
+      fontSize: fontSize * (minSize / 500), // Scale with screen size
       fontWeight: fontWeight,
       color: color,
     );

@@ -79,78 +79,89 @@ class TouristExplore extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SizedBox(
-        width: MyUtility(context).width,
-        height: MyUtility(context).height,
-        child: Center(
-          child: Stack(
-            children: [
-              // Grey container background
-              Positioned(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              width: MyUtility(context).width,
+              height: MyUtility(context).height,
+              child: Center(
+                child: Stack(
                   children: [
-                    Container(
-                      width: MyUtility(context).width,
-                      height: MyUtility(context).height * 0.8,
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(50),
-                          topRight: Radius.circular(50),
+                    // Grey container background
+                    Positioned(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            width: MyUtility(context).width,
+                            height: MyUtility(context).height * 0.85,
+                            decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(50),
+                                topRight: Radius.circular(50),
+                              ),
+                              color: Mycolors().lightGrey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Positioned(
+                      left: screenWidth * 0.05,
+                      right: screenWidth * 0.05,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: screenHeight * 0.15,
+                              width: screenWidth * 0.4,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'images/myJbay_logo_cutoff.png'),
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ),
+                            // Everything Local container
+                            ReusablePageTitle(
+                                title: 'Everything Local',
+                                backgroundColor: Mycolors().blue),
+                            const SizedBox(height: 30),
+                            // Generate ReusableCategoryContainer widgets dynamically
+                            Wrap(
+                              runSpacing: 20.0,
+                              spacing: 20.0,
+                              children: categories.map((category) {
+                                return ReusableCategoryContainer(
+                                  imagePath: category['imagePath']!,
+                                  title: category['title']!,
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) =>
+                                            category['page'] as Widget,
+                                      ),
+                                    );
+                                  },
+                                );
+                              }).toList(),
+                            ),
+                            SizedBox(
+                              height: screenHeight * 0.3, // Adjust height here
+                            ),
+                          ],
                         ),
-                        color: Mycolors().lightGrey,
                       ),
                     ),
                   ],
                 ),
               ),
-              Positioned(
-                left: screenWidth * 0.05,
-                right: screenWidth * 0.05,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 15.0),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: screenHeight * 0.15,
-                        width: screenWidth * 0.4,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('images/myJbay_logo_cutoff.png'),
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                      // Everything Local container
-                      ReusablePageTitle(
-                          title: 'Everything Local',
-                          backgroundColor: Mycolors().blue),
-                      const SizedBox(height: 30),
-                      // Generate ReusableCategoryContainer widgets dynamically
-                      Wrap(
-                        runSpacing: 20.0,
-                        spacing: 20.0,
-                        children: categories.map((category) {
-                          return ReusableCategoryContainer(
-                            imagePath: category['imagePath']!,
-                            title: category['title']!,
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (_) => category['page'] as Widget,
-                                ),
-                              );
-                            },
-                          );
-                        }).toList(),
-                      ),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

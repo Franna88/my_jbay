@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/ViewBusinesses/business_listing.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
-import 'package:my_jbay/Tourist/TouristMainComponants/view_business_page_layout.dart';
+import 'package:my_jbay/Tourist/TouristMainComponants/ViewBusinesses/view_business_page_layout.dart';
 import 'package:my_jbay/commanUi/reusable_button.dart';
 import 'package:my_jbay/commanUi/top_page_componants.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/Categories/category_list.dart';
