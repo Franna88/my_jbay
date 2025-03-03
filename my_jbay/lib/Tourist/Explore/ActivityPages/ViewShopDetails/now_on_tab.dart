@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/event_details.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/ViewBusinesses/business_listing.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/reusable_event_container.dart';
@@ -27,16 +28,18 @@ class NowOnTab extends StatelessWidget {
             children: [
               SizedBox(height: MyUtility(context).height * 0.045),
               ReusableEventContainer(
-                  imageUrl: 'images/event_paint.png',
-                  location: 'Location',
-                  dateTime: 'date and time',
-                  eventTitle: 'Event Title'),
+                imageUrl: 'images/event_paint.png',
+                location: 'Location',
+                dateTime: 'date and time',
+                eventTitle: 'Event Title',
+              ),
               SizedBox(height: MyUtility(context).height * 0.05),
               ReusableEventContainer(
-                  imageUrl: 'images/event_padel.png',
-                  location: 'Location',
-                  dateTime: 'date and time',
-                  eventTitle: 'Event Title'),
+                imageUrl: 'images/event_padel.png',
+                location: 'Location',
+                dateTime: 'date and time',
+                eventTitle: 'Event Title',
+              ),
               SizedBox(height: MyUtility(context).height * 0.05),
             ],
           ),

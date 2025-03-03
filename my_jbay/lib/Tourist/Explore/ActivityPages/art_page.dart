@@ -19,42 +19,34 @@ class ArtPage extends StatelessWidget {
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Art 1',
-        'page': const ViewShopNavbar(),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Art 2',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Art 3',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Art 4',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Art 5',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Art 6',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Art 7',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Art 8',
-        'page': const Center(child: Text('Link Page')),
       },
 
       // Add more categories as needed
@@ -62,6 +54,10 @@ class ArtPage extends StatelessWidget {
     // List of categories with imagePath, title, and unique onTap functionality
 
     return GreyContainerPageLayout(
-        title: 'Art', bodyContent: BusinessListing(businesses: business));
+        title: 'Art',
+        bodyContent: BusinessListing(
+          businesses: business,
+          onTap: () => ViewShopNavbar(),
+        ));
   }
 }

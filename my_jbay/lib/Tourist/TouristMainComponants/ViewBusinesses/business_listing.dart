@@ -4,9 +4,14 @@ import 'package:provider/provider.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/reusable_view_business_containers.dart';
 
 class BusinessListing extends StatelessWidget {
+  final Widget Function()? onTap; // Changed to return Widget
   final List<Map<String, dynamic>> businesses;
 
-  const BusinessListing({super.key, required this.businesses});
+  const BusinessListing({
+    super.key,
+    required this.businesses,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +23,25 @@ class BusinessListing extends StatelessWidget {
           imagePath: business['imagePath']!,
           title: business['title']!,
           onTap: () {
-            // Hide navbar
             context.read<NavbarVisibilityProvider>().hideNavbar();
-
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => business['page'] as Widget,
+                builder: (_) => onTap != null ? onTap!() : onTap as Widget,
               ),
             ).then((_) {
-              // Show navbar again when returning
               context.read<NavbarVisibilityProvider>().showNavbar();
             });
+            // context.read<NavbarVisibilityProvider>().hideNavbar();
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (_) =>
+            //         onTap != null ? onTap!() : business['page'] as Widget,
+            //   ),
+            // ).then((_) {
+            //   context.read<NavbarVisibilityProvider>().showNavbar();
+            // });
           },
         );
       }).toList(),

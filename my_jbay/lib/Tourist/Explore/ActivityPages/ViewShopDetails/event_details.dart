@@ -11,16 +11,16 @@ import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/my_jbay_textstyle.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class AboutTab extends StatelessWidget {
-  final String shopName = 'Shop Name';
-  const AboutTab({super.key});
+class EventDetails extends StatelessWidget {
+  final String eventDetails = 'Event Details';
+  const EventDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
     // List of categories with imagePath, title, and unique onTap functionality
 
     return ViewBusinessPageLayout(
-      title: shopName,
+      title: eventDetails,
       bodyContent: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -35,41 +35,38 @@ class AboutTab extends StatelessWidget {
               ),
               color: Mycolors().blue,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                SizedBox(height: MyUtility(context).height * 0.05),
-                Text(
-                  'This is a shop listing description',
-                  style: MyJbayTextstyle(context)
-                      .regularSmallText
-                      .copyWith(color: Colors.white),
-                ),
-                Spacer(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'images/insta.png',
-                      // fit: BoxFit.contain,
-                      // width: MyUtility(context).width * 0.9,
-                      // height: MyUtility(context).height * 0.6,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      eventDetails,
+                      style: MyJbayTextstyle(context).regularSmallText.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                    Image.asset('images/tiktok.png'),
-                    Image.asset('images/facebook_style.png'),
-                  ],
-                ),
-                SizedBox(height: MyUtility(context).height * 0.03),
-                ReusableButton(
-                  buttonColor: Mycolors().yellow,
-                  buttonText: 'Add to MY Jbay',
-                  onTap: () {},
-                  customHeight: MyUtility(context).height * 0.05,
-                  customWidth: MyUtility(context).width * 0.4,
-                ),
-                SizedBox(height: MyUtility(context).height * 0.05),
-              ],
+                  ),
+                  Spacer(),
+                  Text(
+                    'This is a event details',
+                    style: MyJbayTextstyle(context)
+                        .regularSmallText
+                        .copyWith(color: Colors.white),
+                  ),
+                  Spacer(),
+                  SizedBox(height: MyUtility(context).height * 0.03),
+                  ReusableButton(
+                    buttonColor: Mycolors().yellow,
+                    buttonText: 'Add to MY Jbay',
+                    onTap: () {},
+                    customHeight: MyUtility(context).height * 0.05,
+                    customWidth: MyUtility(context).width * 0.4,
+                  ),
+                  SizedBox(height: MyUtility(context).height * 0.05),
+                ],
+              ),
             ),
           ),
         ],

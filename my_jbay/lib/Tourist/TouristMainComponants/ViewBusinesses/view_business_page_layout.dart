@@ -139,6 +139,19 @@ class _ViewBusinessPageLayoutState extends State<ViewBusinessPageLayout> {
               backgroundColor: Mycolors().yellow,
             ),
           ),
+          Positioned(
+            top: 30,
+            child: IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: Mycolors().blue,
+                size: 60,
+              ),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ),
         ],
       ),
     );
