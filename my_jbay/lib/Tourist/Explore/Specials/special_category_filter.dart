@@ -49,7 +49,7 @@ class SpecialCategoryFilter extends StatelessWidget {
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: MyJbayTextstyle(context).styleSmallText.copyWith(
+                style: MyJbayTextstyle(context).styleSmallerText.copyWith(
                       height: 1,
                       fontWeight:
                           isSelected ? FontWeight.bold : FontWeight.normal,

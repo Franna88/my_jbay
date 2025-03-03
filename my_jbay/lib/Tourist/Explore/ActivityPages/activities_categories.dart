@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/art_page.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/EventPage/events_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/jbay_shops.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/kids_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/markets_page.dart';
@@ -32,7 +33,7 @@ class ActivitiesCategories extends StatelessWidget {
       {
         'imagePath': 'images/events.png',
         'title': 'events',
-        'page': const Center(child: Text('Link Page')),
+        'page': const EventsPage(),
       },
       {
         'imagePath': 'images/kids.png',

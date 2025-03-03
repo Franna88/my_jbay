@@ -27,7 +27,7 @@ class MyJbayTextstyle {
       );
 
   TextStyle get yellowStyleHeader => TextStyle(
-        fontSize: minSize * 0.035, // Adjusted for responsiveness
+        fontSize: minSize * 0.045, // Adjusted for responsiveness
         fontWeight: FontWeight.normal,
         color: Mycolors().yellow,
         fontFamily: 'BmHanna',
@@ -35,7 +35,7 @@ class MyJbayTextstyle {
       );
 
   TextStyle get blacksStyleSubheader => TextStyle(
-        fontSize: minSize * 0.04, // Adjusted for responsiveness
+        fontSize: minSize * 0.035, // Adjusted for responsiveness
         fontWeight: FontWeight.normal,
         color: Colors.black,
         fontFamily: 'BmHanna',
@@ -61,6 +61,13 @@ class MyJbayTextstyle {
   TextStyle get styleSmallText => TextStyle(
         fontFamily: 'BmHanna',
         fontSize: minSize * 0.025, // Adjusted for responsiveness
+        fontWeight: FontWeight.w500,
+        color: Colors.black,
+      );
+
+  TextStyle get styleSmallerText => TextStyle(
+        fontFamily: 'BmHanna',
+        fontSize: minSize * 0.02, // Adjusted for responsiveness
         fontWeight: FontWeight.w500,
         color: Colors.black,
       );
