@@ -9,22 +9,20 @@ class ReusableEventContainer extends StatelessWidget {
   final String location;
   final String dateTime;
   final String eventTitle;
+  final VoidCallback onTap; // Callback for tap action
 
-  ReusableEventContainer({
+  const ReusableEventContainer({
     required this.imageUrl,
     required this.location,
     required this.dateTime,
     required this.eventTitle,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => EventDetails()),
-        );
-      },
+      onTap: onTap, // Use the provided callback
       child: Container(
         width: MyUtility(context).width * 0.9,
         decoration: BoxDecoration(
@@ -34,18 +32,15 @@ class ReusableEventContainer extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // Blue container on the top half
             Container(
-              height:
-                  MediaQuery.of(context).size.height * 0.25, // Adjust as needed
+              height: MediaQuery.of(context).size.height * 0.25,
               decoration: BoxDecoration(
                 color: Mycolors().blue,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                 ),
               ),
-
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: ClipRRect(
@@ -59,32 +54,28 @@ class ReusableEventContainer extends StatelessWidget {
                 ),
               ),
             ),
-            // Text content under the blue container
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Row for location, date, and time
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(location,
                           style: MyJbayTextstyle(context).smallGreyText),
-                      SizedBox(width: 5),
-                      // Vertical divider (line)
+                      const SizedBox(width: 5),
                       Container(
-                        height: 20, // Adjust height as needed
-                        width: 1.5, // Thickness of the vertical line
-                        color: Colors.grey, // Color of the line
+                        height: 20,
+                        width: 1.5,
+                        color: Colors.grey,
                       ),
-                      SizedBox(width: 5),
+                      const SizedBox(width: 5),
                       Text(dateTime,
                           style: MyJbayTextstyle(context).smallGreyText),
                     ],
                   ),
-                  // Event title underneath the location and date/time
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(eventTitle,
                       style: MyJbayTextstyle(context).blacksStyleSubheader),
                 ],

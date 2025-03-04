@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/art_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/EventPage/events_page.dart';
-import 'package:my_jbay/Tourist/Explore/ActivityPages/jbay_shops.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/JBayShops/jbay_shops.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/kids_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/markets_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/municipality_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/music_page.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/other_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/outdoor_page.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/waves_page.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
 import 'package:my_jbay/commanUi/top_page_componants.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/Categories/category_list.dart';
@@ -68,12 +70,12 @@ class ActivitiesCategories extends StatelessWidget {
       {
         'imagePath': 'images/waves.png',
         'title': 'waves',
-        'page': const Center(child: Text('Link Page')),
+        'page': const WavesPage(),
       },
       {
         'imagePath': 'images/other.png',
         'title': 'other',
-        'page': const Center(child: Text('Link Page')),
+        'page': const OtherPage(),
       },
       // Add more categories as needed
     ];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/event_details.dart';
+
 import 'package:my_jbay/Tourist/TouristMainComponants/ViewBusinesses/business_listing.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/reusable_event_container.dart';
@@ -13,38 +14,32 @@ import 'package:my_jbay/constants/myColors.dart';
 import 'package:my_jbay/constants/my_jbay_textstyle.dart';
 import 'package:my_jbay/constants/myutility.dart';
 
-class NowOnTab extends StatelessWidget {
+class CatalogueTab extends StatelessWidget {
   final Function(Widget) onContentChanged;
 
-  const NowOnTab({super.key, required this.onContentChanged});
+  const CatalogueTab({super.key, required this.onContentChanged});
 
   @override
   Widget build(BuildContext context) {
     return ViewBusinessPageLayout(
-      title: 'Now On',
+      title: 'Catalogue',
       bodyContent: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(height: MyUtility(context).height * 0.045),
-            ReusableEventContainer(
-              imageUrl: 'images/event_paint.png',
-              location: 'Location',
-              dateTime: 'date and time',
-              eventTitle: 'Event Title',
-              onTap: () => onContentChanged(
-                  EventDetails(onContentChanged: onContentChanged)),
-            ),
-            SizedBox(height: MyUtility(context).height * 0.05),
-            ReusableEventContainer(
-              imageUrl: 'images/event_padel.png',
-              location: 'Location',
-              dateTime: 'date and time',
-              eventTitle: 'Event Title',
-              onTap: () => onContentChanged(
-                  EventDetails(onContentChanged: onContentChanged)),
-            ),
-            SizedBox(height: MyUtility(context).height * 0.05),
+            Container(
+              width: MyUtility(context).width * 0.9,
+              height: MyUtility(context).height * 0.6,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
+                ),
+                color: Mycolors().blue,
+              ),
+              child: Column(
+                children: [],
+              ),
+            )
           ],
         ),
       ),

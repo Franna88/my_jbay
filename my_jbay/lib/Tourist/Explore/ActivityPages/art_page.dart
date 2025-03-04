@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/about_tab.dart';
-import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/view_shop_navbar.dart';
+
+import 'package:my_jbay/commanUi/DifferentBottomNavbars/nav_with_now_on.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/ViewBusinesses/business_listing.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
 import 'package:my_jbay/commanUi/top_page_componants.dart';
@@ -57,7 +57,7 @@ class ArtPage extends StatelessWidget {
         title: 'Art',
         bodyContent: BusinessListing(
           businesses: business,
-          onTap: () => ViewShopNavbar(),
+          onTap: () => NavbarWithNowOn(),
         ));
   }
 }

@@ -8,9 +8,14 @@ import 'package:my_jbay/constants/myutility.dart';
 class ViewBusinessPageLayout extends StatefulWidget {
   final String title;
   final Widget bodyContent;
+  final Function(Widget)? onBackPressed; // Optional callback for back button
 
-  const ViewBusinessPageLayout(
-      {super.key, required this.title, required this.bodyContent});
+  const ViewBusinessPageLayout({
+    super.key,
+    required this.title,
+    required this.bodyContent,
+    this.onBackPressed, // Remains optional
+  });
 
   @override
   _ViewBusinessPageLayoutState createState() => _ViewBusinessPageLayoutState();
@@ -116,7 +121,7 @@ class _ViewBusinessPageLayoutState extends State<ViewBusinessPageLayout> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        const SizedBox(height: 40), // Space for overlay effect
+                        const SizedBox(height: 40),
                         Align(
                           alignment: Alignment.bottomCenter,
                           child: widget.bodyContent,
@@ -128,10 +133,8 @@ class _ViewBusinessPageLayoutState extends State<ViewBusinessPageLayout> {
               ),
             ],
           ),
-          // Overlay ReusablePageTitle
           Positioned(
-            top: imageHeight -
-                30, // Slightly overlaps both the image and container
+            top: imageHeight - 30,
             left: 20,
             right: 20,
             child: ReusablePageTitle(
@@ -148,7 +151,13 @@ class _ViewBusinessPageLayoutState extends State<ViewBusinessPageLayout> {
                 size: 60,
               ),
               onPressed: () {
-                Navigator.pop(context);
+                if (widget.onBackPressed != null) {
+                  // Use the provided callback if it exists
+                  widget.onBackPressed!(widget.bodyContent);
+                } else {
+                  // Default to Navigator.pop if no callback is provided
+                  Navigator.pop(context);
+                }
               },
             ),
           ),

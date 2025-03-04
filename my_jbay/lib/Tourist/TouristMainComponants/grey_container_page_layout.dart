@@ -42,19 +42,21 @@ class GreyContainerPageLayout extends StatelessWidget {
                   ),
                   color: Mycolors().lightGrey,
                 ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 30.0),
-                        child: ReusablePageTitle(
-                            title: title, backgroundColor: Mycolors().yellow),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: ReusablePageTitle(
+                          title: title, backgroundColor: Mycolors().yellow),
+                    ),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: SizedBox(
+                          child: bodyContent,
+                        ),
                       ),
-                      SizedBox(
-                        child: bodyContent,
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               ),
             ),

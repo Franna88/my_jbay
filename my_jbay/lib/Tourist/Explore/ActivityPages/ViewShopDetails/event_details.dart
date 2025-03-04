@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/ViewShopDetails/now_on_tab.dart';
+
 import 'package:my_jbay/Tourist/TouristMainComponants/ViewBusinesses/business_listing.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/ViewBusinesses/view_business_page_layout.dart';
@@ -13,14 +15,21 @@ import 'package:my_jbay/constants/myutility.dart';
 
 class EventDetails extends StatelessWidget {
   final String eventDetails = 'Event Details';
-  const EventDetails({super.key});
+  final Function(Widget)? onContentChanged;
+
+  const EventDetails({
+    super.key,
+    this.onContentChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
-    // List of categories with imagePath, title, and unique onTap functionality
-
     return ViewBusinessPageLayout(
       title: eventDetails,
+      onBackPressed: onContentChanged != null
+          ? (widget) =>
+              onContentChanged!(NowOnTab(onContentChanged: onContentChanged!))
+          : null,
       bodyContent: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -42,20 +51,35 @@ class EventDetails extends StatelessWidget {
                 children: [
                   Align(
                     alignment: Alignment.topLeft,
-                    child: Text(
-                      eventDetails,
-                      style: MyJbayTextstyle(context).regularSmallText.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          eventDetails,
+                          style: MyJbayTextstyle(context)
+                              .regularSmallText
+                              .copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                        ),
+                        if (onContentChanged != null)
+                          IconButton(
+                            icon: const Icon(Icons.arrow_back,
+                                color: Colors.white),
+                            onPressed: () => onContentChanged!(
+                                NowOnTab(onContentChanged: onContentChanged!)),
+                          ),
+                      ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Text(
                     'This is a event details',
                     style: MyJbayTextstyle(context)
                         .regularSmallText
                         .copyWith(color: Colors.white),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   SizedBox(height: MyUtility(context).height * 0.03),
                   ReusableButton(
                     buttonColor: Mycolors().yellow,

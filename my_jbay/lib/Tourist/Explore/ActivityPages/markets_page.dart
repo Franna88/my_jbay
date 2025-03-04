@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/ViewBusinesses/business_listing.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
+import 'package:my_jbay/commanUi/DifferentBottomNavbars/nav_plain.dart';
 import 'package:my_jbay/commanUi/top_page_componants.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/Categories/category_list.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/Categories/reusable_category_container.dart';
@@ -17,42 +18,34 @@ class MarketsPage extends StatelessWidget {
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Markets 1',
-        'page': const MarketsPage(),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Markets 2',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Markets 3',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Markets 4',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Markets 5',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Markets 6',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Markets 7',
-        'page': const Center(child: Text('Link Page')),
       },
       {
         'imagePath': 'images/business_listing.png',
         'title': 'Markets 8',
-        'page': const Center(child: Text('Link Page')),
       },
 
       // Add more categories as needed
@@ -60,6 +53,10 @@ class MarketsPage extends StatelessWidget {
     // List of categories with imagePath, title, and unique onTap functionality
 
     return GreyContainerPageLayout(
-        title: 'Markets', bodyContent: BusinessListing(businesses: business));
+        title: 'Markets',
+        bodyContent: BusinessListing(
+          businesses: business,
+          onTap: () => NavbarPlain(),
+        ));
   }
 }

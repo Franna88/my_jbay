@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:my_jbay/Tourist/Explore/tourist_explore.dart';
 import 'package:my_jbay/Tourist/MyJbay/tourist_my_jbay.dart';
 import 'package:my_jbay/Tourist/Settings/tourist_settings.dart';
-import 'package:my_jbay/commanUi/main_navbar.dart';
+import 'package:my_jbay/commanUi/DifferentBottomNavbars/main_globalkey_navbar.dart';
 
 class TouristLandingPage extends StatefulWidget {
   const TouristLandingPage({super.key});

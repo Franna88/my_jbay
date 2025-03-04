@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_jbay/Business/BusinessSettingsTab/business_settings.dart';
 import 'package:my_jbay/Tourist/Explore/tourist_explore.dart';
 import 'package:my_jbay/Tourist/MyJbay/tourist_my_jbay.dart';
-import 'package:my_jbay/commanUi/main_navbar.dart';
+import 'package:my_jbay/commanUi/DifferentBottomNavbars/main_globalkey_navbar.dart';
 
 class BusinessLandingPage extends StatefulWidget {
   const BusinessLandingPage({super.key});

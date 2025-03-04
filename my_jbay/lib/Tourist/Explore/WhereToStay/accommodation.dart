@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/art_page.dart';
-import 'package:my_jbay/Tourist/Explore/ActivityPages/jbay_shops.dart';
+import 'package:my_jbay/Tourist/Explore/ActivityPages/JBayShops/jbay_shops.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/kids_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/markets_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/municipality_page.dart';
