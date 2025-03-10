@@ -25,7 +25,25 @@ class AboutTab extends StatelessWidget {
       bodyContent: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          SizedBox(height: MyUtility(context).height * 0.045),
+          SizedBox(height: MyUtility(context).height * 0.04),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ActionButton(
+                icon: Icons.language,
+                text: 'Visit Website',
+                actionUrl:
+                    'https://placeholderlink.com', // Replace with actual URL
+              ),
+              SizedBox(width: 8),
+              ActionButton(
+                icon: Icons.call,
+                text: 'Call Us',
+                actionUrl: 'tel:+1234567890', // Replace with actual number
+              ),
+            ],
+          ),
+          SizedBox(height: MyUtility(context).height * 0.015),
           Container(
             width: MyUtility(context).width * 0.9,
             height: MyUtility(context).height * 0.6,
@@ -40,25 +58,6 @@ class AboutTab extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                SizedBox(height: MyUtility(context).height * 0.03),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ActionButton(
-                      icon: Icons.language,
-                      text: 'Visit Website',
-                      actionUrl:
-                          'https://placeholderlink.com', // Replace with actual URL
-                    ),
-                    SizedBox(width: 8),
-                    ActionButton(
-                      icon: Icons.call,
-                      text: 'Call Us',
-                      actionUrl:
-                          'tel:+1234567890', // Replace with actual number
-                    ),
-                  ],
-                ),
                 SizedBox(height: MyUtility(context).height * 0.05),
 
                 Text(

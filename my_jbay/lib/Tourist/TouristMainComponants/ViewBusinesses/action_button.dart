@@ -5,7 +5,7 @@ import 'package:my_jbay/constants/myutility.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:my_jbay/constants/myColors.dart';
 
-class ActionButton extends StatelessWidget {
+class ActionButton extends StatefulWidget {
   final IconData icon;
   final String text;
   final String actionUrl; // URL or tel: number
@@ -19,16 +19,23 @@ class ActionButton extends StatelessWidget {
     this.onError,
   });
 
+  @override
+  _ActionButtonState createState() => _ActionButtonState();
+}
+
+class _ActionButtonState extends State<ActionButton> {
+  bool _isHovered = false;
+
   Future<void> _launchAction(BuildContext context) async {
-    final url = Uri.parse(actionUrl);
+    final url = Uri.parse(widget.actionUrl);
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {
-      if (onError != null) {
-        onError!();
+      if (widget.onError != null) {
+        widget.onError!();
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Could not launch $actionUrl')),
+          SnackBar(content: Text('Could not launch ${widget.actionUrl}')),
         );
       }
     }
@@ -36,26 +43,35 @@ class ActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: () => _launchAction(context),
-      icon: Icon(icon, color: Colors.white),
-      label: Text(text,
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: ElevatedButton.icon(
+        onPressed: () => _launchAction(context),
+        icon: Icon(widget.icon, color: Mycolors().blue), // Blue icon
+        label: Text(
+          widget.text,
           style: MyJbayTextstyle(context)
               .styleSmallText
-              .copyWith(color: Colors.white)),
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Mycolors().yellow, // Button background
-        foregroundColor: Mycolors().yellow, // Text/icon color on press
-        padding: EdgeInsets.symmetric(
-          horizontal: MyUtility(context).width * 0.08 > 20.0
-              ? MyUtility(context).width * 0.08
-              : 20.0,
-          vertical: MyUtility(context).height * 0.030 > 15.0
-              ? MyUtility(context).height * 0.030
-              : 15.0,
+              .copyWith(color: Mycolors().blue), // Blue text
         ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10), // Rounded corners
+        style: ElevatedButton.styleFrom(
+          backgroundColor:
+              _isHovered ? Colors.lightBlue : Colors.white, // Changes on hover
+          foregroundColor: Mycolors().blue, // Color when pressed
+          side: BorderSide(color: Mycolors().blue, width: 2), // Blue border
+          padding: EdgeInsets.symmetric(
+            horizontal: MyUtility(context).width * 0.08 > 20.0
+                ? MyUtility(context).width * 0.08
+                : 20.0,
+            vertical: MyUtility(context).height * 0.030 > 15.0
+                ? MyUtility(context).height * 0.030
+                : 15.0,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30), // Rounded corners
+          ),
+          elevation: 0, // Flat look
         ),
       ),
     );

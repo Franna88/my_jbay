@@ -6,6 +6,13 @@ import 'package:my_jbay/Tourist/Explore/ActivityPages/markets_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/municipality_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/music_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/outdoor_page.dart';
+import 'package:my_jbay/Tourist/Explore/WhereToStay/AccommodationPageTypes/back_packers.dart';
+import 'package:my_jbay/Tourist/Explore/WhereToStay/AccommodationPageTypes/camp.dart';
+import 'package:my_jbay/Tourist/Explore/WhereToStay/AccommodationPageTypes/guest_house.dart';
+import 'package:my_jbay/Tourist/Explore/WhereToStay/AccommodationPageTypes/holiday_house.dart';
+import 'package:my_jbay/Tourist/Explore/WhereToStay/AccommodationPageTypes/hotel.dart';
+import 'package:my_jbay/Tourist/Explore/WhereToStay/AccommodationPageTypes/lodge.dart';
+import 'package:my_jbay/Tourist/Explore/WhereToStay/AccommodationPageTypes/other_accommodation.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
 import 'package:my_jbay/commanUi/top_page_componants.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/Categories/category_list.dart';
@@ -19,51 +26,38 @@ class Accommodation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-
     // List of categories with imagePath, title, and unique onTap functionality
     final List<Map<String, dynamic>> categories = [
       {
         'imagePath': 'images/backpackers.png',
         'title': 'backpackers',
-        'page': () {},
+        'page': BackPackers()
       },
-      {
-        'imagePath': 'images/camp.png',
-        'title': 'camp',
-        'page': () {},
-      },
+      {'imagePath': 'images/camp.png', 'title': 'camp', 'page': Camp()},
       {
         'imagePath': 'images/guest_house.png',
         'title': 'guesthouse',
-        'page': () {},
+        'page': GuestHouse()
       },
       {
         'imagePath': 'images/holiday_house.png',
-        'title': 'holidayhouse',
-        'page': () {},
+        'title': 'holiday house',
+        'page': HolidayHouse()
       },
-      {
-        'imagePath': 'images/hotel.png',
-        'title': 'hotel',
-        'page': () {},
-      },
-      {
-        'imagePath': 'images/lodge.png',
-        'title': 'lodge',
-        'page': () {},
-      },
+      {'imagePath': 'images/hotel.png', 'title': 'hotel', 'page': Hotel()},
+      {'imagePath': 'images/lodge.png', 'title': 'lodge', 'page': Lodge()},
       {
         'imagePath': 'images/other.png',
         'title': 'other',
-        'page': () {},
+        'page': OtherAccommodation()
       },
       // Add more categories as needed
     ];
 
     return GreyContainerPageLayout(
         title: 'Accommodation',
-        bodyContent: CategoryList(categories: categories));
+        bodyContent: CategoryList(
+          categories: categories,
+        ));
   }
 }

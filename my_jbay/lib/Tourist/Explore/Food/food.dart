@@ -6,6 +6,15 @@ import 'package:my_jbay/Tourist/Explore/ActivityPages/markets_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/municipality_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/music_page.dart';
 import 'package:my_jbay/Tourist/Explore/ActivityPages/outdoor_page.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/bakery_sweet.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/catering.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/coffee.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/deli.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/delivery.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/drinks.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/other_food.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/sit_down.dart';
+import 'package:my_jbay/Tourist/Explore/Food/FoodTypes/take_away.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/grey_container_page_layout.dart';
 import 'package:my_jbay/commanUi/top_page_componants.dart';
 import 'package:my_jbay/Tourist/TouristMainComponants/Categories/category_list.dart';
@@ -19,55 +28,52 @@ class Food extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-
     // List of categories with imagePath, title, and unique onTap functionality
     final List<Map<String, dynamic>> categories = [
       {
         'imagePath': 'images/bakerysweet.png',
         'title': 'bakery/sweet',
-        'page': () {},
+        'page': BakerySweet(),
       },
       {
         'imagePath': 'images/sitdown.png',
         'title': 'sit down',
-        'page': () {},
+        'page': SitDown(),
       },
       {
         'imagePath': 'images/takeaway.png',
         'title': 'take away',
-        'page': () {},
+        'page': TakeAway(),
       },
       {
         'imagePath': 'images/coffee.png',
         'title': 'coffee',
-        'page': () {},
+        'page': Coffee(),
       },
       {
         'imagePath': 'images/deli.png',
         'title': 'deli',
-        'page': () {},
+        'page': Deli(),
       },
       {
         'imagePath': 'images/drinks.png',
         'title': 'drinks',
-        'page': () {},
+        'page': Drinks(),
       },
       {
         'imagePath': 'images/delivery.png',
         'title': 'delivery',
-        'page': () {},
+        'page': Delivery(),
       },
       {
         'imagePath': 'images/catering.png',
         'title': 'catering',
-        'page': () {},
+        'page': Catering(),
       },
       {
         'imagePath': 'images/other.png',
         'title': 'other',
-        'page': () {},
+        'page': OtherFood(),
       },
       // Add more categories as needed
     ];
