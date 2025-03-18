@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "475469224311",
+    "project_id": "my-jbay-app",
+    "storage_bucket": "my-jbay-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475469224311:android:469e496f70d36c81382972",
+        "android_client_info": {
+          "package_name": "com.example.my_jbay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbO1g8hl5rglkEDEu1-67HZ-re0NfPjlE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
