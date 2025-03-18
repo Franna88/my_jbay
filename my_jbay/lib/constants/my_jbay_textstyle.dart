@@ -53,7 +53,7 @@ class MyJbayTextstyle {
 
   TextStyle get smallGreyText => TextStyle(
         fontFamily: 'Nunito',
-        fontSize: minSize * 0.02, // Adjusted for responsiveness
+        fontSize: minSize * 0.025, // Adjusted for responsiveness
         fontWeight: FontWeight.w500,
         color: Colors.grey,
       );

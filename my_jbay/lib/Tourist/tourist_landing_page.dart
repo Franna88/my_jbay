@@ -7,27 +7,36 @@ import 'package:my_jbay/Tourist/Settings/tourist_settings.dart';
 import 'package:my_jbay/commanUi/DifferentBottomNavbars/main_globalkey_navbar.dart';
 
 class TouristLandingPage extends StatefulWidget {
-  const TouristLandingPage({super.key});
+  final int initialTab;
+  const TouristLandingPage({super.key, this.initialTab = 0});
 
   @override
-  _TouristLandingPageState createState() => _TouristLandingPageState();
+  TouristLandingPageState createState() => TouristLandingPageState();
 }
 
-class _TouristLandingPageState extends State<TouristLandingPage> {
-  int _selectedIndex = 0;
+class TouristLandingPageState extends State<TouristLandingPage> {
+  late int selectedIndex; // Made public (removed underscore)
 
-  final List<GlobalKey<NavigatorState>> _navigatorKeys = [
+  final List<GlobalKey<NavigatorState>> navigatorKeys = [
+    // Made public (removed underscore)
     GlobalKey<NavigatorState>(), // Explore tab navigator
     GlobalKey<NavigatorState>(), // My JBay tab navigator
     GlobalKey<NavigatorState>(), // Settings tab navigator
   ];
 
-  void _onTabSelected(int index) {
-    if (_selectedIndex == index) {
-      _navigatorKeys[index].currentState?.popUntil((route) => route.isFirst);
+  @override
+  void initState() {
+    super.initState();
+    selectedIndex = widget.initialTab;
+  }
+
+  void onTabSelected(int index) {
+    // Made public (removed underscore)
+    if (selectedIndex == index) {
+      navigatorKeys[index].currentState?.popUntil((route) => route.isFirst);
     } else {
       setState(() {
-        _selectedIndex = index;
+        selectedIndex = index;
       });
     }
   }
@@ -39,29 +48,32 @@ class _TouristLandingPageState extends State<TouristLandingPage> {
 
     return Scaffold(
       body: IndexedStack(
-        index: _selectedIndex,
+        index: selectedIndex,
         children: [
           Navigator(
-            key: _navigatorKeys[0],
+            key: navigatorKeys[0],
             onGenerateRoute: (routeSettings) {
               return MaterialPageRoute(
                 builder: (_) => const TouristExplore(),
+                settings: const RouteSettings(name: 'TouristExplore'),
               );
             },
           ),
           Navigator(
-            key: _navigatorKeys[1],
+            key: navigatorKeys[1],
             onGenerateRoute: (routeSettings) {
               return MaterialPageRoute(
                 builder: (_) => const TouristMyJbay(),
+                settings: const RouteSettings(name: 'TouristMyJbay'),
               );
             },
           ),
           Navigator(
-            key: _navigatorKeys[2],
+            key: navigatorKeys[2],
             onGenerateRoute: (routeSettings) {
               return MaterialPageRoute(
                 builder: (_) => const TouristSettings(),
+                settings: const RouteSettings(name: 'TouristSettings'),
               );
             },
           ),
@@ -69,10 +81,10 @@ class _TouristLandingPageState extends State<TouristLandingPage> {
       ),
       bottomNavigationBar: isNavbarVisible
           ? MainNavbar(
-              initialIndex: _selectedIndex,
-              onTabSelected: _onTabSelected,
+              initialIndex: selectedIndex,
+              onTabSelected: onTabSelected,
             )
-          : null, // Hide navbar if isNavbarVisible is false
+          : null,
     );
   }
 }

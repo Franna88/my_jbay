@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:my_jbay/constants/myColors.dart';
+import 'package:my_jbay/constants/my_jbay_textstyle.dart';
 
 class ReusableTextfield extends StatelessWidget {
-  final String title; // Title text above the text field
-  final TextInputType keyboardType; // Input type (text, email, number, etc.)
-  final TextEditingController controller; // Controller for managing input
-  final IconData? icon; // Optional icon for the text field
-  final GestureTapCallback? onTap; // Optional onTap function
+  final String title;
+  final TextInputType keyboardType;
+  final TextEditingController controller;
+  final Widget? icon;
+  final GestureTapCallback? onTap;
+  final int? maxLines; // New optional parameter with default value null
 
   const ReusableTextfield({
     super.key,
     required this.title,
     required this.keyboardType,
     required this.controller,
-    this.icon, // Optional parameter for icon
-    this.onTap, // Optional parameter for onTap functionality
+    this.icon,
+    this.onTap,
+    this.maxLines, // Optional, defaults to null
   });
 
   @override
@@ -22,40 +25,29 @@ class ReusableTextfield extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 12,
-            color: Colors.grey[500],
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+        Text(title, style: MyJbayTextstyle(context).smallGreyText),
         SizedBox(height: 8),
         GestureDetector(
-          onTap: onTap, // Trigger onTap if provided
+          onTap: onTap,
           child: TextField(
             controller: controller,
             keyboardType: keyboardType,
+            maxLines: maxLines, // Pass maxLines to TextField, null by default
             decoration: InputDecoration(
-              prefixIcon: icon != null
-                  ? Icon(
-                      icon,
-                      color: Mycolors().yellow,
-                    )
-                  : null, // Add icon only if provided
+              prefixIcon: icon,
               filled: true,
               fillColor: Colors.white,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
                 borderSide: BorderSide(
-                  color: Mycolors().blue, // Thin blue border
+                  color: Mycolors().blue,
                   width: 1,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(25),
                 borderSide: BorderSide(
-                  color: Mycolors().blue, // Blue border on focus
+                  color: Mycolors().blue,
                   width: 1.5,
                 ),
               ),

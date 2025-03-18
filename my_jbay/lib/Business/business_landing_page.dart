@@ -50,7 +50,7 @@ class _BusinessLandingPageState extends State<BusinessLandingPage> {
             key: _navigatorKeys[0],
             onGenerateRoute: (routeSettings) {
               return MaterialPageRoute(
-                builder: (_) => const Center(child: Text('Business Explore')),
+                builder: (_) => const TouristExplore(),
               ); // Explore page
             },
           ),
@@ -58,7 +58,7 @@ class _BusinessLandingPageState extends State<BusinessLandingPage> {
             key: _navigatorKeys[1],
             onGenerateRoute: (routeSettings) {
               return MaterialPageRoute(
-                builder: (_) => const Center(child: Text('Business My Jbay')),
+                builder: (_) => const TouristMyJbay(),
               ); // My JBay page
             },
           ),

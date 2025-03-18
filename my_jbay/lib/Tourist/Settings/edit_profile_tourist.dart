@@ -112,37 +112,37 @@ class EditProfileTourist extends StatelessWidget {
                     ),
                     SizedBox(height: MyUtility(context).height * 0.03),
                     ReusableTextfield(
-                      title: 'Name',
-                      keyboardType: TextInputType.name,
-                      controller: _nameController,
-                      icon: Icons.person,
-                    ),
+                        title: 'Name',
+                        keyboardType: TextInputType.name,
+                        controller: _nameController,
+                        icon: Icon(
+                          Icons.person,
+                          color: Mycolors().yellow,
+                        )),
                     SizedBox(height: MyUtility(context).height * 0.015),
                     ReusableTextfield(
-                      title: 'Email Address',
-                      keyboardType: TextInputType.emailAddress,
-                      controller: _emailController,
-                      icon: Icons.email,
-                    ),
+                        title: 'Email Address',
+                        keyboardType: TextInputType.emailAddress,
+                        controller: _emailController,
+                        icon: Icon(
+                          Icons.email,
+                          color: Mycolors().yellow,
+                        )),
                     SizedBox(height: MyUtility(context).height * 0.015),
                     ReusableTextfield(
-                      title: 'Phone Number',
-                      keyboardType: TextInputType.phone,
-                      controller: _phoneController,
-                      icon: Icons.phone,
-                    ),
+                        title: 'Phone Number',
+                        keyboardType: TextInputType.phone,
+                        controller: _phoneController,
+                        icon: Icon(
+                          Icons.phone,
+                          color: Mycolors().yellow,
+                        )),
                     SizedBox(height: MyUtility(context).height * 0.015),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Birth Date',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.grey[500],
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        Text('Birth Date',
+                            style: MyJbayTextstyle(context).smallGreyText),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

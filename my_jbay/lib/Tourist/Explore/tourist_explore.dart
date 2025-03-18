@@ -81,82 +81,59 @@ class TouristExplore extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            SizedBox(height: screenHeight * 0.015), // Top padding
+            Container(
+              height: screenHeight * 0.15,
+              width: screenWidth * 0.4,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/myJbay_logo_cutoff.png'),
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            Container(
               width: MyUtility(context).width,
-              height: MyUtility(context).height,
-              child: Center(
-                child: Stack(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(50),
+                  topRight: Radius.circular(50),
+                ),
+                color: Mycolors().lightGrey,
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Grey container background
-                    Positioned(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            width: MyUtility(context).width,
-                            height: MyUtility(context).height * 0.85,
-                            decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.only(
-                                topLeft: Radius.circular(50),
-                                topRight: Radius.circular(50),
-                              ),
-                              color: Mycolors().lightGrey,
-                            ),
-                          ),
-                        ],
-                      ),
+                    SizedBox(height: screenHeight * 0.03), // Space before title
+                    ReusablePageTitle(
+                      title: 'Everything Local',
+                      backgroundColor: Mycolors().blue,
                     ),
-                    Positioned(
-                      left: screenWidth * 0.05,
-                      right: screenWidth * 0.05,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: screenHeight * 0.15,
-                              width: screenWidth * 0.4,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      'images/myJbay_logo_cutoff.png'),
-                                  fit: BoxFit.contain,
-                                ),
+                    const SizedBox(height: 30),
+                    // Generate ReusableCategoryContainer widgets dynamically
+                    Wrap(
+                      runSpacing: 20.0,
+                      spacing: 20.0,
+                      children: categories.map((category) {
+                        return ReusableCategoryContainer(
+                          imagePath: category['imagePath']!,
+                          title: category['title']!,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => category['page'] as Widget,
                               ),
-                            ),
-                            // Everything Local container
-                            ReusablePageTitle(
-                                title: 'Everything Local',
-                                backgroundColor: Mycolors().blue),
-                            const SizedBox(height: 30),
-                            // Generate ReusableCategoryContainer widgets dynamically
-                            Wrap(
-                              runSpacing: 20.0,
-                              spacing: 20.0,
-                              children: categories.map((category) {
-                                return ReusableCategoryContainer(
-                                  imagePath: category['imagePath']!,
-                                  title: category['title']!,
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            category['page'] as Widget,
-                                      ),
-                                    );
-                                  },
-                                );
-                              }).toList(),
-                            ),
-                            SizedBox(
-                              height: screenHeight * 0.3, // Adjust height here
-                            ),
-                          ],
-                        ),
-                      ),
+                            );
+                          },
+                        );
+                      }).toList(),
                     ),
+                    SizedBox(height: 30), // Bottom padding
                   ],
                 ),
               ),
