@@ -3,16 +3,27 @@ import 'package:flutter/material.dart';
 class LoginTextFields extends StatelessWidget {
   final TextEditingController inputController;
   final String hintText;
-  const LoginTextFields(
-      {Key? key, required this.inputController, required this.hintText})
-      : super(key: key);
+  final TextInputType? keyboardType;
+  final bool obscureText;
+  final bool readOnly;
+  final VoidCallback? onTap;
+  final void Function(String)? onChanged; // Added onChanged parameter
+
+  const LoginTextFields({
+    Key? key,
+    required this.inputController,
+    required this.hintText,
+    this.keyboardType,
+    this.obscureText = false,
+    this.readOnly = false,
+    this.onTap,
+    this.onChanged, // Optional, defaults to null
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const primaryColor = Color.fromRGBO(172, 184, 194, 1);
-    const secondaryColor = Color(0xff6D28D9);
     const accentColor = Color(0xffffffff);
-    const backgroundColor = Color(0xffffffff);
     const errorColor = Color.fromARGB(181, 239, 68, 68);
 
     return Column(
@@ -29,13 +40,13 @@ class LoginTextFields extends StatelessWidget {
           ]),
           child: TextField(
             controller: inputController,
-            onChanged: (value) {
-              //Do something wi
-            },
-            keyboardType: TextInputType.emailAddress,
+            onChanged: onChanged, // Use the passed onChanged
+            keyboardType: keyboardType,
+            obscureText: obscureText,
+            readOnly: readOnly,
+            onTap: onTap,
             style: const TextStyle(fontSize: 14, color: Colors.black),
             decoration: InputDecoration(
-              // prefixIcon: Icon(Icons.email),
               filled: true,
               fillColor: accentColor,
               hintText: hintText,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_jbay/Auth/ui/loginTextfields.dart';
 import 'package:my_jbay/Business/business_landing_page.dart';
 import 'package:my_jbay/MainLandingPage/OnboardingPages/onboarding_pages.dart';
-import 'package:my_jbay/Login/ui/loginTextfields.dart';
+
 import 'package:my_jbay/Tourist/tourist_landing_page.dart';
 import 'package:my_jbay/commanUi/reusable_button.dart';
 import 'package:my_jbay/constants/myColors.dart';
